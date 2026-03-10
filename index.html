@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entrepreneur Inner Circle™</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--blush:#F0BFCC;--rose:#C8788A;--deep-rose:#9B3A52;--gold:#C9A96E;--gold-light:#E8D5B0;--petal:#FBF0F3;--cream:#FEF9FA;--white:#fff;--charcoal:#2C1A20;--muted:#9A7480;--border:rgba(200,120,138,.2);--shadow:0 4px 24px rgba(155,58,82,.08);}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--charcoal);min-height:100vh;display:flex;}
+
+/* SIDEBAR */
+.sidebar{width:230px;min-height:100vh;background:linear-gradient(180deg,#fff9fb,#faf0f4);border-right:1px solid var(–border);display:flex;flex-direction:column;position:fixed;top:0;left:0;bottom:0;z-index:50;overflow-y:auto;}
+.logo{padding:24px 20px 20px;border-bottom:1px solid var(–border);}
+.logo-name{font-family:‘Cinzel’,serif;font-size:12px;font-weight:600;letter-spacing:.14em;color:var(–deep-rose);line-height:1.65;text-transform:uppercase;}
+.logo-div{display:flex;align-items:center;gap:5px;margin:7px 0 5px;}
+.logo-line{flex:1;height:1px;background:var(–gold-light);}
+.logo-dot{width:4px;height:4px;border-radius:50%;background:var(–gold);}
+.logo-sub{font-family:‘Cormorant Garamond’,serif;font-size:10.5px;font-style:italic;color:var(–muted);}
+.nav{flex:1;padding:14px 10px;display:flex;flex-direction:column;gap:2px;}
+.nav-section{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(–gold);padding:10px 12px 4px;font-weight:600;}
+.nav-btn{display:flex;align-items:center;gap:9px;padding:9px 12px;border-radius:9px;cursor:pointer;font-size:12.5px;color:var(–muted);border:none;background:none;width:100%;text-align:left;transition:all .2s;}
+.nav-btn:hover{background:var(–petal);color:var(–deep-rose);}
+.nav-btn.active{background:linear-gradient(135deg,#f5d0db,#e8a0b4);color:var(–deep-rose);font-weight:500;}
+.nav-icon{width:16px;text-align:center;font-size:13px;flex-shrink:0;}
+.save-bar{padding:12px 18px;border-top:1px solid var(–border);font-size:10.5px;color:var(–muted);font-style:italic;text-align:center;}
+.save-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#b5d5a8;margin-right:4px;vertical-align:middle;}
+
+/* MAIN */
+.main{margin-left:230px;flex:1;padding:36px 36px 80px;min-height:100vh;}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(–deep-rose),#7a2a40);border-radius:18px;padding:30px 200px 30px 34px;margin-bottom:26px;position:relative;overflow:hidden;border:1px solid rgba(201,169,110,.25);}
+.hero::after{content:’’;position:absolute;right:-50px;bottom:-50px;width:180px;height:180px;border-radius:50%;background:rgba(255,255,255,.04);pointer-events:none;}
+.hero-eye{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(–gold-light);margin-bottom:7px;opacity:.9;}
+.hero-title{font-family:‘Cinzel’,serif;font-size:22px;font-weight:600;color:#fff;letter-spacing:.04em;margin-bottom:7px;line-height:1.2;}
+.hero-desc{font-family:‘Cormorant Garamond’,serif;font-size:15px;font-style:italic;color:rgba(255,255,255,.82);line-height:1.5;}
+.hero-pill{position:absolute;right:28px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.1);border:1px solid rgba(201,169,110,.4);border-radius:12px;padding:12px 18px;text-align:center;backdrop-filter:blur(4px);}
+.hero-pill-val{font-family:‘Cinzel’,serif;font-size:18px;color:var(–gold-light);font-weight:600;}
+.hero-pill-lbl{font-size:9px;color:rgba(255,255,255,.7);letter-spacing:.1em;text-transform:uppercase;margin-top:2px;}
+
+/* CARDS */
+.card{background:var(–white);border-radius:15px;padding:24px;box-shadow:var(–shadow);border:1px solid var(–border);margin-bottom:18px;}
+.card-title{font-family:‘Cinzel’,serif;font-size:12px;font-weight:600;letter-spacing:.1em;color:var(–deep-rose);text-transform:uppercase;margin-bottom:4px;}
+.card-desc{font-size:12.5px;color:var(–muted);line-height:1.65;margin-bottom:16px;}
+.card-hr{height:1px;background:var(–border);margin:14px 0;}
+
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+
+/* METRIC CARDS */
+.mc{background:var(–white);border-radius:13px;padding:18px;border:1px solid var(–border);box-shadow:var(–shadow);position:relative;overflow:hidden;}
+.mc::before{content:’’;position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(–gold-light),var(–gold));}
+.mc-label{font-size:10px;color:var(–muted);letter-spacing:.13em;text-transform:uppercase;margin-bottom:7px;}
+.mc-input{font-family:‘Cormorant Garamond’,serif;font-size:22px;font-weight:600;color:var(–deep-rose);border:none;background:none;width:100%;outline:none;border-bottom:1.5px dashed var(–border);padding-bottom:3px;}
+.mc-input::placeholder{color:var(–blush);font-style:italic;font-size:18px;}
+.mc-hint{font-size:10px;color:var(–muted);margin-top:6px;font-style:italic;}
+
+/* FORMS */
+.flabel{font-size:10px;font-weight:500;color:var(–muted);letter-spacing:.12em;text-transform:uppercase;margin-bottom:5px;display:block;}
+.finput,.fselect,.ftextarea{width:100%;padding:9px 13px;border:1.5px solid var(–border);border-radius:8px;font-family:‘DM Sans’,sans-serif;font-size:13px;color:var(–charcoal);background:var(–petal);outline:none;transition:border .2s;}
+.finput:focus,.fselect:focus,.ftextarea:focus{border-color:var(–rose);background:#fff;}
+.ftextarea{resize:vertical;min-height:65px;line-height:1.5;}
+.fgroup{margin-bottom:13px;}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:6px;padding:9px 20px;border-radius:8px;font-family:‘DM Sans’,sans-serif;font-size:13px;font-weight:500;cursor:pointer;border:none;transition:all .2s;}
+.btn-rose{background:linear-gradient(135deg,var(–rose),var(–deep-rose));color:#fff;}
+.btn-rose:hover{transform:translateY(-1px);box-shadow:0 5px 16px rgba(155,58,82,.28);}
+.btn-gold{background:linear-gradient(135deg,var(–gold-light),var(–gold));color:var(–deep-rose);font-weight:600;}
+.btn-gold:hover{transform:translateY(-1px);box-shadow:0 5px 14px rgba(201,169,110,.3);}
+.btn-out{background:transparent;color:var(–rose);border:1.5px solid var(–blush);}
+.btn-out:hover{background:var(–petal);}
+.btn-sm{padding:6px 14px;font-size:12px;}
+.btn-block{width:100%;justify-content:center;}
+
+/* EMPTY */
+.empty{text-align:center;padding:28px 16px;border:1.5px dashed var(–border);border-radius:11px;background:var(–petal);}
+.empty-icon{font-size:26px;margin-bottom:8px;}
+.empty-title{font-family:‘Cinzel’,serif;font-size:11px;color:var(–deep-rose);letter-spacing:.07em;margin-bottom:5px;}
+.empty-desc{font-size:11.5px;color:var(–muted);line-height:1.6;max-width:220px;margin:0 auto;}
+
+/* LIST ITEMS */
+.list-item{display:flex;align-items:flex-start;gap:11px;padding:13px 15px;background:var(–petal);border-radius:10px;border:1px solid var(–border);margin-bottom:8px;transition:all .2s;}
+.list-item.done .li-text{text-decoration:line-through;opacity:.4;}
+.li-num{font-family:‘Cinzel’,serif;font-size:16px;font-weight:600;color:var(–gold);min-width:18px;line-height:1;margin-top:1px;}
+.li-body{flex:1;}
+.li-text{font-size:13px;font-weight:500;color:var(–charcoal);}
+.li-meta{font-size:11px;color:var(–muted);margin-top:2px;}
+.li-actions{display:flex;align-items:center;gap:5px;}
+.chk{width:20px;height:20px;border-radius:50%;border:2px solid var(–blush);cursor:pointer;background:#fff;display:flex;align-items:center;justify-content:center;font-size:10px;color:transparent;transition:all .2s;flex-shrink:0;}
+.chk.done{background:var(–rose);border-color:var(–rose);color:#fff;}
+.x-btn{font-size:13px;color:var(–muted);cursor:pointer;background:none;border:none;padding:2px 4px;opacity:.45;transition:opacity .2s;}
+.x-btn:hover{opacity:1;}
+
+/* TIMELINE */
+.tl-entry{padding:12px 15px;background:var(–petal);border-radius:10px;border-left:3px solid var(–rose);margin-bottom:8px;position:relative;}
+.tl-meta{font-size:10px;color:var(–muted);margin-bottom:3px;letter-spacing:.05em;text-transform:uppercase;}
+.tl-text{font-size:12.5px;color:var(–charcoal);line-height:1.6;}
+
+/* WIZARD */
+.w-track{display:flex;gap:5px;margin-bottom:5px;}
+.w-dot{flex:1;height:4px;border-radius:4px;background:var(–border);transition:all .3s;}
+.w-dot.active{background:linear-gradient(90deg,var(–blush),var(–rose));}
+.w-dot.done{background:var(–gold);}
+.w-lbl{font-size:11px;color:var(–muted);margin-bottom:18px;}
+.w-q{font-family:‘Cormorant Garamond’,serif;font-size:19px;color:var(–charcoal);margin-bottom:16px;line-height:1.4;}
+.opt-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.opt-btn{padding:12px 14px;border-radius:10px;border:1.5px solid var(–border);background:var(–white);cursor:pointer;font-family:‘DM Sans’,sans-serif;font-size:12.5px;color:var(–charcoal);text-align:left;transition:all .2s;}
+.opt-btn:hover,.opt-btn.picked{border-color:var(–rose);background:var(–petal);color:var(–deep-rose);}
+.sl-wrap{margin-bottom:14px;}
+.sl-row{display:flex;justify-content:space-between;font-size:12.5px;color:var(–charcoal);margin-bottom:5px;}
+.sl-val{color:var(–rose);font-weight:500;}
+input[type=range]{width:100%;accent-color:var(–rose);cursor:pointer;}
+.result-box{background:linear-gradient(135deg,var(–petal),#f5dde8);border-radius:13px;padding:22px;border:1px solid var(–blush);}
+.result-title{font-family:‘Cinzel’,serif;font-size:11px;color:var(–deep-rose);letter-spacing:.08em;margin-bottom:8px;}
+.result-text{font-size:13.5px;color:var(–charcoal);line-height:1.75;margin-bottom:13px;}
+.r-tag{display:inline-block;background:#fff;color:var(–deep-rose);border:1px solid var(–blush);padding:3px 10px;border-radius:20px;font-size:11px;margin:3px 3px 0 0;}
+
+/* WIN ITEMS */
+.win-item{display:flex;gap:10px;padding:12px 14px;background:var(–petal);border-radius:10px;border:1px solid var(–border);margin-bottom:8px;position:relative;}
+.win-av{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(–blush),var(–rose));display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:600;flex-shrink:0;font-family:‘Cinzel’,serif;}
+.win-cat{font-size:11px;font-weight:500;color:var(–deep-rose);}
+.win-text{font-size:12.5px;color:var(–charcoal);margin-top:2px;line-height:1.5;}
+.win-time{font-size:10px;color:var(–muted);margin-top:2px;}
+
+/* TABS */
+.tabs{display:flex;gap:6px;margin-bottom:18px;flex-wrap:wrap;}
+.tab-btn{padding:7px 16px;border-radius:20px;font-size:12px;font-weight:500;cursor:pointer;border:1.5px solid var(–border);background:var(–white);color:var(–muted);transition:all .2s;}
+.tab-btn:hover{border-color:var(–rose);color:var(–rose);}
+.tab-btn.active{background:linear-gradient(135deg,var(–rose),var(–deep-rose));color:#fff;border-color:transparent;}
+.tab-panel{display:none;}
+.tab-panel.active{display:block;}
+
+/* MODULE PROGRESS */
+.mod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:18px;}
+.mod-card{padding:14px;border-radius:11px;border:1px solid var(–border);background:var(–white);cursor:pointer;transition:all .2s;}
+.mod-card:hover{border-color:var(–blush);}
+.mod-card.current{border-color:var(–rose);background:var(–petal);}
+.mod-card.complete{border-color:var(–gold);background:#fffdf5;}
+.mod-num{font-family:‘Cinzel’,serif;font-size:10px;color:var(–gold);letter-spacing:.1em;margin-bottom:4px;}
+.mod-title{font-size:12px;font-weight:500;color:var(–charcoal);line-height:1.3;}
+.mod-status{font-size:10px;color:var(–muted);margin-top:4px;}
+
+/* PRICING CALC */
+.calc-result{background:linear-gradient(135deg,var(–petal),#f5dde8);border-radius:13px;padding:20px;border:1px solid var(–blush);margin-top:16px;}
+.calc-price{font-family:‘Cormorant Garamond’,serif;font-size:42px;font-weight:600;color:var(–deep-rose);margin-bottom:4px;}
+.calc-breakdown{font-size:12px;color:var(–muted);line-height:1.8;}
+
+/* CHECKLIST */
+.cl-item{display:flex;align-items:flex-start;gap:10px;padding:11px 14px;background:var(–petal);border-radius:9px;border:1px solid var(–border);margin-bottom:7px;}
+.cl-cb{width:18px;height:18px;border-radius:4px;border:2px solid var(–blush);cursor:pointer;background:#fff;flex-shrink:0;margin-top:1px;display:flex;align-items:center;justify-content:center;font-size:10px;color:transparent;transition:all .2s;}
+.cl-cb.done{background:var(–rose);border-color:var(–rose);color:#fff;}
+.cl-text{font-size:12.5px;color:var(–charcoal);flex:1;line-height:1.4;}
+.cl-text.done{text-decoration:line-through;opacity:.45;}
+
+/* TEMPLATES */
+.tmpl-card{background:var(–petal);border-radius:11px;border:1px solid var(–border);padding:16px;margin-bottom:10px;}
+.tmpl-title{font-family:‘Cinzel’,serif;font-size:11px;color:var(–deep-rose);letter-spacing:.08em;margin-bottom:8px;}
+.tmpl-body{font-size:12.5px;color:var(–charcoal);line-height:1.7;white-space:pre-wrap;}
+.tmpl-actions{margin-top:10px;display:flex;gap:8px;}
+.copy-btn{font-size:11px;padding:5px 12px;border-radius:7px;background:var(–white);border:1px solid var(–blush);color:var(–rose);cursor:pointer;transition:all .2s;}
+.copy-btn:hover{background:var(–petal);}
+textarea.tmpl-edit{width:100%;border:1.5px solid var(–border);border-radius:8px;background:#fff;padding:10px;font-size:12.5px;color:var(–charcoal);line-height:1.7;resize:vertical;outline:none;min-height:120px;}
+textarea.tmpl-edit:focus{border-color:var(–rose);}
+
+/* MONTHLY GOAL PLANNER */
+.goal-area{padding:14px;background:var(–petal);border-radius:10px;border:1px solid var(–border);margin-bottom:10px;}
+.goal-area-title{font-family:‘Cinzel’,serif;font-size:10.5px;color:var(–deep-rose);letter-spacing:.08em;margin-bottom:8px;}
+
+/* VA JOB AD */
+.ja-output{background:var(–white);border:1.5px solid var(–border);border-radius:11px;padding:20px;font-size:13px;color:var(–charcoal);line-height:1.75;white-space:pre-wrap;margin-top:14px;}
+
+/* SECTION */
+.sec{display:none;}
+.sec.active{display:block;}
+
+/* MODAL */
+.overlay{position:fixed;inset:0;background:rgba(44,26,32,.45);backdrop-filter:blur(4px);display:none;align-items:center;justify-content:center;z-index:200;}
+.overlay.open{display:flex;}
+.modal{background:#fff;border-radius:17px;padding:30px;max-width:500px;width:92%;box-shadow:0 20px 60px rgba(44,26,32,.2);max-height:90vh;overflow-y:auto;}
+.modal-title{font-family:‘Cinzel’,serif;font-size:15px;font-weight:600;color:var(–deep-rose);letter-spacing:.06em;margin-bottom:5px;}
+.modal-sub{font-size:12.5px;color:var(–muted);margin-bottom:18px;line-height:1.65;}
+.modal-actions{display:flex;gap:8px;margin-top:16px;}
+
+/* TOAST */
+.toast{position:fixed;bottom:24px;right:24px;background:linear-gradient(135deg,var(–rose),var(–deep-rose));color:#fff;padding:11px 18px;border-radius:9px;font-size:12.5px;font-weight:500;box-shadow:0 6px 22px rgba(155,58,82,.3);transform:translateY(60px);opacity:0;transition:all .4s cubic-bezier(.34,1.56,.64,1);z-index:999;}
+.toast.show{transform:translateY(0);opacity:1;}
+
+/* SETUP */
+.setup-screen{display:flex;align-items:center;justify-content:center;min-height:100vh;width:100%;background:var(–cream);}
+.setup-card{background:#fff;border-radius:20px;padding:44px;max-width:460px;width:90%;box-shadow:0 20px 60px rgba(155,58,82,.12);border:1px solid var(–border);text-align:center;}
+.setup-logo{font-family:‘Cinzel’,serif;font-size:13px;font-weight:600;letter-spacing:.16em;color:var(–deep-rose);text-transform:uppercase;line-height:1.6;margin-bottom:5px;}
+.setup-divider{display:flex;align-items:center;gap:6px;margin:9px auto 7px;max-width:180px;}
+.setup-line{flex:1;height:1px;background:var(–gold-light);}
+.setup-dot{width:4px;height:4px;border-radius:50%;background:var(–gold);}
+.setup-tag{font-family:‘Cormorant Garamond’,serif;font-size:12px;font-style:italic;color:var(–muted);margin-bottom:24px;}
+.setup-h{font-family:‘Cormorant Garamond’,serif;font-size:24px;font-weight:300;color:var(–charcoal);margin-bottom:7px;}
+.setup-p{font-size:12.5px;color:var(–muted);line-height:1.65;margin-bottom:24px;}
+/* ══ HAMBURGER BUTTON ══ */
+.hamburger{display:none;position:fixed;top:52px;left:14px;z-index:200;width:40px;height:40px;border-radius:10px;background:var(–deep-rose);border:none;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;box-shadow:0 3px 12px rgba(155,58,82,.3);}
+.hamburger span{display:block;width:18px;height:2px;background:#fff;border-radius:2px;transition:all .3s;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(44,26,32,.4);z-index:98;backdrop-filter:blur(2px);}
+.sidebar-overlay.open{display:block;}
+
+/* ══ MOBILE RESPONSIVE ══ */
+@media(max-width:768px){
+body{flex-direction:column;}
+.hamburger{display:flex;}
+
+.sidebar{
+position:fixed;top:0;left:-260px;width:250px;height:100vh;
+z-index:99;transition:left .3s cubic-bezier(.4,0,.2,1);
+box-shadow:4px 0 24px rgba(155,58,82,.15);
+}
+.sidebar.open{left:0;}
+
+.main{
+margin-left:0;
+padding:70px 16px 100px;
+width:100%;
+}
+
+/* Hero */
+.hero{padding:22px 18px 22px;margin-bottom:18px;}
+.hero-pill{position:static;transform:none;margin-top:14px;display:inline-block;}
+.hero-title{font-size:18px;}
+.hero-desc{font-size:13px;}
+
+/* Grids → single column on mobile */
+.g2,.g3{grid-template-columns:1fr;}
+.mod-grid{grid-template-columns:repeat(2,1fr);}
+.opt-grid{grid-template-columns:1fr;}
+
+/* Cards */
+.card{padding:18px 16px;}
+
+/* Metric cards → 2 col */
+.mc{padding:14px;}
+.mc-input{font-size:18px;}
+
+/* Tabs — scrollable */
+.tabs{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px;-webkit-overflow-scrolling:touch;gap:6px;}
+.tabs::-webkit-scrollbar{display:none;}
+.tab-btn{white-space:nowrap;flex-shrink:0;}
+
+/* Tables — scrollable */
+table{font-size:11px;}
+
+/* Wizard options */
+.w-q{font-size:16px;}
+
+/* Buttons */
+.btn{font-size:12.5px;padding:9px 16px;}
+
+/* Modal */
+.modal{padding:22px 18px;margin:12px;}
+
+/* Bottom nav bar for quick access */
+.mobile-bottom-nav{
+display:flex;position:fixed;bottom:0;left:0;right:0;
+background:#fff;border-top:1px solid var(–border);
+z-index:97;padding:6px 0 8px;
+box-shadow:0 -4px 16px rgba(155,58,82,.08);
+}
+.mbn-btn{
+flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;
+background:none;border:none;cursor:pointer;padding:4px 2px;
+font-size:9px;color:var(–muted);font-family:‘DM Sans’,sans-serif;
+transition:color .2s;
+}
+.mbn-btn.active{color:var(–deep-rose);}
+.mbn-icon{font-size:18px;line-height:1;}
+
+/* Setup card */
+.setup-card{padding:28px 22px;}
+.setup-h{font-size:20px;}
+}
+
+@media(min-width:769px){
+.mobile-bottom-nav{display:none;}
+.hamburger{display:none;}
+}
+
+/* Metrics grid: 2-col on mobile specifically */
+@media(max-width:768px){
+#sec-home .g3{grid-template-columns:1fr 1fr;}
+}
+</style>
+
+</head>
+<body>
+
+<!-- SETUP -->
+
+<div id="setupScreen" class="setup-screen">
+  <div class="setup-card">
+    <div class="setup-logo">Entrepreneur<br>Inner Circle™</div>
+    <div class="setup-divider"><div class="setup-line"></div><div class="setup-dot"></div><div class="setup-line"></div></div>
+    <div class="setup-tag">12-Module Business Build Framework</div>
+    <div class="setup-h">Welcome! Let's get started.</div>
+    <div class="setup-p">This is your personal app. Everything you enter saves automatically on your computer — no internet or login required. Just open this file anytime to pick up where you left off.</div>
+    <div class="fgroup" style="text-align:left;margin-bottom:13px;">
+      <label class="flabel">Your First Name</label>
+      <input class="finput" id="setupName" placeholder="e.g. Sarah"/>
+    </div>
+    <div class="fgroup" style="text-align:left;margin-bottom:22px;">
+      <label class="flabel">Which month are you starting?</label>
+      <select class="fselect" id="setupMonth">
+        <option value="1">Month 1 — What Should You Build?</option>
+        <option value="2">Month 2 — What Are You Selling?</option>
+        <option value="3">Month 3 — Test It Before You Overbuild</option>
+        <option value="4">Month 4 — Where Should You Show Up?</option>
+        <option value="5">Month 5 — What Do You Actually Say?</option>
+        <option value="6">Month 6 — How to Talk About Money</option>
+        <option value="7">Month 7 — Make It Look Real</option>
+        <option value="8">Month 8 — Start Building an Email List</option>
+        <option value="9">Month 9 — When Do You Need Help?</option>
+        <option value="10">Month 10 — Get Seen Beyond Social Media</option>
+        <option value="11">Month 11 — Clean It Up and Raise Your Prices</option>
+        <option value="12">Month 12 — Build Your Next-Year Plan</option>
+      </select>
+    </div>
+    <button class="btn btn-rose btn-block" style="font-size:14px;padding:13px;" onclick="completeSetup()">Open My App ✦</button>
+  </div>
+</div>
+
+<!-- APP SHELL -->
+
+<div id="appShell" style="display:none;width:100%;">
+
+<!-- Mobile hamburger -->
+
+<button class="hamburger" id="hamburger" onclick="toggleSidebar()" aria-label="Menu">
+  <span></span><span></span><span></span>
+</button>
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+
+<!-- Mobile bottom nav -->
+
+<div class="mobile-bottom-nav">
+  <button class="mbn-btn active" id="mbn-home" onclick="nav('home',null);mbnActive('home');closeSidebar()"><span class="mbn-icon">✦</span>Home</button>
+  <button class="mbn-btn" id="mbn-sprint" onclick="nav('sprint',null);mbnActive('sprint');closeSidebar()"><span class="mbn-icon">⚡</span>Sprint</button>
+  <button class="mbn-btn" id="mbn-wins" onclick="nav('wins',null);mbnActive('wins');closeSidebar()"><span class="mbn-icon">★</span>Wins</button>
+  <button class="mbn-btn" id="mbn-goals" onclick="nav('goals',null);mbnActive('goals');closeSidebar()"><span class="mbn-icon">🎯</span>Goals</button>
+  <button class="mbn-btn" id="mbn-more" onclick="toggleSidebar()"><span class="mbn-icon">☰</span>More</button>
+</div>
+
+<nav class="sidebar" id="sidebar">
+  <div class="logo">
+    <div class="logo-name">Entrepreneur<br>Inner Circle™</div>
+    <div class="logo-div"><div class="logo-line"></div><div class="logo-dot"></div><div class="logo-line"></div></div>
+    <div class="logo-sub">12-Module Business Build Framework</div>
+  </div>
+  <div class="nav">
+    <div class="nav-section">Dashboard</div>
+    <button class="nav-btn active" onclick="nav('home',this)"><span class="nav-icon">✦</span>My Dashboard</button>
+    <button class="nav-btn" onclick="nav('sprint',this)"><span class="nav-icon">⚡</span>Sprint Board</button>
+    <button class="nav-btn" onclick="nav('wins',this)"><span class="nav-icon">★</span>Wins Feed</button>
+    <button class="nav-btn" onclick="nav('decision',this)"><span class="nav-icon">◈</span>Decision Wizard</button>
+
+```
+<div class="nav-section">My Tools</div>
+<button class="nav-btn" onclick="nav('goals',this)"><span class="nav-icon">🎯</span>Monthly Goal Planner</button>
+<button class="nav-btn" onclick="nav('pricing',this)"><span class="nav-icon">💰</span>Pricing Calculator</button>
+<button class="nav-btn" onclick="nav('launch',this)"><span class="nav-icon">🚀</span>Launch Checklist</button>
+<button class="nav-btn" onclick="nav('content',this)"><span class="nav-icon">✍️</span>Content Prompts</button>
+<button class="nav-btn" onclick="nav('audience',this)"><span class="nav-icon">🌸</span>Audience Builder</button>
+<button class="nav-btn" onclick="nav('templates',this)"><span class="nav-icon">📄</span>Sales Templates</button>
+<button class="nav-btn" onclick="nav('va',this)"><span class="nav-icon">🤝</span>Hire a VA</button>
+```
+
+  </div>
+  <div class="save-bar"><span class="save-dot"></span><span id="saveLabel">All changes saved</span></div>
+</nav>
+
+<div class="main">
+
+<!-- ══════════════ DASHBOARD / HOME ══════════════ -->
+
+<div id="sec-home" class="sec active">
+  <div class="hero">
+    <div class="hero-eye">✦ Your Business Build Year</div>
+    <div class="hero-title">My Dashboard</div>
+    <div class="hero-desc">Track your monthly metrics, see your module progress, and get to any tool fast. Everything saves automatically.</div>
+    <div class="hero-pill">
+      <div class="hero-pill-val" id="heroM">Month 1</div>
+      <div class="hero-pill-lbl">of 12</div>
+    </div>
+  </div>
+
+  <!-- MODULE PROGRESS -->
+
+  <div class="card">
+    <div class="card-title">📚 My 12 Modules</div>
+    <div class="card-desc">Click your current module to mark it active. Check it complete when you finish.</div>
+    <div class="mod-grid" id="modGrid"></div>
+  </div>
+
+  <!-- METRICS -->
+
+  <div class="card">
+    <div class="card-title">📊 Monthly Metrics</div>
+    <div class="card-desc">Update your numbers each month. Use the selector to view any month.</div>
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+      <label style="font-size:12px;color:var(--muted);">Viewing:</label>
+      <select class="fselect" id="metricMonth" onchange="loadMetrics()" style="width:auto;padding:6px 12px;">
+        <option value="1">Month 1</option><option value="2">Month 2</option><option value="3">Month 3</option>
+        <option value="4">Month 4</option><option value="5">Month 5</option><option value="6">Month 6</option>
+        <option value="7">Month 7</option><option value="8">Month 8</option><option value="9">Month 9</option>
+        <option value="10">Month 10</option><option value="11">Month 11</option><option value="12">Month 12</option>
+      </select>
+    </div>
+    <div class="g3" style="margin-bottom:14px;">
+      <div class="mc"><div class="mc-label">💰 Revenue</div><input class="mc-input" id="m-rev" placeholder="$0" oninput="autoSave()"/><div class="mc-hint">Total income this month</div></div>
+      <div class="mc"><div class="mc-label">🌱 New Leads</div><input class="mc-input" id="m-leads" placeholder="0" oninput="autoSave()"/><div class="mc-hint">New potential clients</div></div>
+      <div class="mc"><div class="mc-label">👥 Audience</div><input class="mc-input" id="m-aud" placeholder="0" oninput="autoSave()"/><div class="mc-hint">Followers + subscribers</div></div>
+      <div class="mc"><div class="mc-label">🛍 Offers Sold</div><input class="mc-input" id="m-sold" placeholder="0" oninput="autoSave()"/><div class="mc-hint">Packages sold this month</div></div>
+      <div class="mc"><div class="mc-label">🎯 My Big Goal</div><input class="mc-input" id="m-goal" placeholder="This month..." oninput="autoSave()"/><div class="mc-hint">Your #1 focus target</div></div>
+    </div>
+    <!-- Year overview table -->
+    <div class="card-title" style="margin-bottom:10px;">📈 Year at a Glance</div>
+    <div style="overflow-x:auto;"><table id="yearTable" style="width:100%;border-collapse:collapse;font-size:12px;"></table></div>
+  </div>
+</div>
+
+<!-- ══════════════ SPRINT BOARD ══════════════ -->
+
+<div id="sec-sprint" class="sec">
+  <div class="hero">
+    <div class="hero-eye">⚡ Decide · Do · Debrief</div>
+    <div class="hero-title">Sprint Board</div>
+    <div class="hero-desc">Three priorities per month. Check them off. Reflect every week. Your check-ins build a Growth Timeline you can look back on at Month 12.</div>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+    <label style="font-size:12px;color:var(--muted);">Sprint for:</label>
+    <select class="fselect" id="sprintMonth" onchange="loadSprint()" style="width:auto;padding:6px 12px;">
+      <option value="1">Month 1</option><option value="2">Month 2</option><option value="3">Month 3</option>
+      <option value="4">Month 4</option><option value="5">Month 5</option><option value="6">Month 6</option>
+      <option value="7">Month 7</option><option value="8">Month 8</option><option value="9">Month 9</option>
+      <option value="10">Month 10</option><option value="11">Month 11</option><option value="12">Month 12</option>
+    </select>
+  </div>
+  <div class="g2" style="align-items:start;">
+    <div>
+      <div class="card">
+        <div class="card-title">📋 This Month's 3 Priorities</div>
+        <div class="card-desc">Three focused actions — no more. Be specific. Complete them before adding more.</div>
+        <div id="priorityList"></div>
+        <div class="empty" id="pEmpty"><div class="empty-icon">📋</div><div class="empty-title">No Priorities Yet</div><div class="empty-desc">Add your top 3 actions for this month.</div></div>
+        <div style="margin-top:14px;"><button class="btn btn-rose" onclick="openModal('addPM')" id="addPBtn">+ Add a Priority</button></div>
+      </div>
+    </div>
+    <div>
+      <div class="card" style="margin-bottom:18px;">
+        <div class="card-title">📝 Weekly Check-In</div>
+        <div class="card-desc">Five honest questions. Saves to your Growth Timeline below.</div>
+        <div class="fgroup"><label class="flabel">1. My biggest win this week</label><textarea class="ftextarea" id="ci1" placeholder="Celebrate something, big or small..."></textarea></div>
+        <div class="fgroup"><label class="flabel">2. Where I felt stuck</label><textarea class="ftextarea" id="ci2" placeholder="Be honest..."></textarea></div>
+        <div class="fgroup"><label class="flabel">3. The action that moved the needle most</label><textarea class="ftextarea" id="ci3" placeholder="The thing that actually mattered..."></textarea></div>
+        <div class="fgroup"><label class="flabel">4. What I'm releasing</label><textarea class="ftextarea" id="ci4" placeholder="A worry, habit, or comparison..."></textarea></div>
+        <div class="fgroup" style="margin-bottom:0;"><label class="flabel">5. My intention for next week</label><textarea class="ftextarea" id="ci5" placeholder="One clear focus..."></textarea></div>
+        <div style="margin-top:14px;"><button class="btn btn-rose" onclick="saveCheckin()">Save to Timeline ✦</button></div>
+      </div>
+      <div class="card">
+        <div class="card-title">📖 Growth Timeline</div>
+        <div class="card-desc">Every check-in you save. Your full year of showing up.</div>
+        <div id="timeline"><div class="empty" id="tlEmpty"><div class="empty-icon">🌸</div><div class="empty-title">Timeline Awaits</div><div class="empty-desc">Save your first check-in to start your growth story.</div></div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ WINS FEED ══════════════ -->
+
+<div id="sec-wins" class="sec">
+  <div class="hero">
+    <div class="hero-eye">★ Celebrate Every Step</div>
+    <div class="hero-title">Wins Feed</div>
+    <div class="hero-desc">Record every win — a new client, a fear faced, a price raised, a boundary held. Nothing is too small. By Month 12 this becomes your evidence of everything you've built.</div>
+  </div>
+  <div class="g2" style="align-items:start;">
+    <div>
+      <div class="card" style="margin-bottom:18px;">
+        <div class="card-title">🌸 Record a Win</div>
+        <div class="fgroup"><label class="flabel">Category</label>
+          <select class="fselect" id="winCat">
+            <option>💰 Revenue Win</option><option>📣 Visibility Win</option><option>🌸 Offer Win</option>
+            <option>🧠 Mindset Win</option><option>📞 Sales Win</option><option>⭐ Personal Win</option>
+          </select>
+        </div>
+        <div class="fgroup" style="margin-bottom:0;"><label class="flabel">Describe your win</label><textarea class="ftextarea" id="winText" placeholder="Be specific and own it — you earned this!"></textarea></div>
+        <div style="margin-top:13px;"><button class="btn btn-rose" onclick="postWin()">Save My Win ★</button></div>
+      </div>
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;">
+          <div class="card-title">★ Win History</div>
+          <span style="font-size:11px;color:var(--muted);" id="winCount">0 wins</span>
+        </div>
+        <div class="card-desc">Your record of momentum.</div>
+        <div id="winFeed"><div class="empty" id="winEmpty"><div class="empty-icon">★</div><div class="empty-title">Your First Win is Coming</div><div class="empty-desc">Post a win to start building your evidence of progress.</div></div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">📊 Wins by Category</div>
+      <div class="card-desc">See where your momentum is showing up across your year.</div>
+      <div class="card-hr"></div>
+      <div id="winStats"><div class="empty"><div class="empty-icon">📊</div><div class="empty-title">Stats Appear Here</div><div class="empty-desc">Start posting wins to see your breakdown.</div></div></div>
+      <div class="card-hr"></div>
+      <div class="card-title" style="margin-bottom:10px;">💬 Your Daily Affirmation</div>
+      <div style="background:linear-gradient(135deg,var(--petal),#f5dde8);border-radius:11px;padding:18px;border:1px solid var(--blush);text-align:center;">
+        <div style="font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;color:var(--deep-rose);line-height:1.5;" id="affirmation"></div>
+      </div>
+      <div style="margin-top:9px;text-align:right;"><button class="btn btn-out btn-sm" onclick="newAff()">New Affirmation</button></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ DECISION WIZARD ══════════════ -->
+
+<div id="sec-decision" class="sec">
+  <div class="hero">
+    <div class="hero-eye">◈ Clarity · Confidence · Action</div>
+    <div class="hero-title">Decision Wizard</div>
+    <div class="hero-desc">Stop second-guessing. Answer 5 questions and get a personalised recommendation built around your capacity and goals. Every decision saves to your archive.</div>
+  </div>
+  <div class="g2" style="align-items:start;">
+    <div class="card">
+      <div class="card-title">◈ Make a Decision</div>
+      <div class="card-desc">Takes less than 2 minutes. Answer honestly — your gut knows.</div>
+      <div class="card-hr"></div>
+      <div class="w-track"><div class="w-dot active" id="wd0"></div><div class="w-dot" id="wd1"></div><div class="w-dot" id="wd2"></div><div class="w-dot" id="wd3"></div><div class="w-dot" id="wd4"></div></div>
+      <div class="w-lbl">Question <span id="wNum">1</span> of 5</div>
+      <div id="ws0"><div class="w-q">What area needs a decision right now?</div><div class="opt-grid"><div class="opt-btn" onclick="wPick(this,0,'Money & Pricing')">💰 Money & Pricing</div><div class="opt-btn" onclick="wPick(this,0,'Marketing & Visibility')">📣 Marketing & Visibility</div><div class="opt-btn" onclick="wPick(this,0,'Offers & Products')">🌸 Offers & Products</div><div class="opt-btn" onclick="wPick(this,0,'Time & Team')">⏱ Time & Team</div></div></div>
+      <div id="ws1" style="display:none"><div class="w-q">How urgent is this decision?</div><div class="opt-grid"><div class="opt-btn" onclick="wPick(this,1,'This week')">🔥 This week</div><div class="opt-btn" onclick="wPick(this,1,'This month')">📅 This month</div><div class="opt-btn" onclick="wPick(this,1,'Next quarter')">🌱 Next quarter</div><div class="opt-btn" onclick="wPick(this,1,'Just exploring')">✦ Just exploring</div></div></div>
+      <div id="ws2" style="display:none">
+        <div class="w-q">Check your capacity right now:</div>
+        <div class="sl-wrap"><div class="sl-row"><span>Energy</span><span class="sl-val" id="sv1">5/10</span></div><input type="range" min="1" max="10" value="5" oninput="document.getElementById('sv1').textContent=this.value+'/10';wCap.e=+this.value"></div>
+        <div class="sl-wrap"><div class="sl-row"><span>Available Time</span><span class="sl-val" id="sv2">5/10</span></div><input type="range" min="1" max="10" value="5" oninput="document.getElementById('sv2').textContent=this.value+'/10';wCap.t=+this.value"></div>
+        <div class="sl-wrap"><div class="sl-row"><span>Cash Flow Confidence</span><span class="sl-val" id="sv3">5/10</span></div><input type="range" min="1" max="10" value="5" oninput="document.getElementById('sv3').textContent=this.value+'/10';wCap.c=+this.value"></div>
+        <button class="btn btn-rose" style="margin-top:6px;" onclick="wNext()">Continue →</button>
+      </div>
+      <div id="ws3" style="display:none"><div class="w-q">What is your gut telling you?</div><div class="opt-grid"><div class="opt-btn" onclick="wPick(this,3,'Lean in and go for it')">✦ Lean in</div><div class="opt-btn" onclick="wPick(this,3,'Wait and gather info')">🔍 Wait and gather info</div><div class="opt-btn" onclick="wPick(this,3,'Simplify first')">✂️ Simplify first</div><div class="opt-btn" onclick="wPick(this,3,'Get support first')">🤝 Get support first</div></div></div>
+      <div id="ws4" style="display:none"><div class="result-box"><div class="result-title">YOUR RECOMMENDATION ✦</div><div class="result-text" id="resultText"></div><div id="resultTags"></div><div style="display:flex;gap:8px;margin-top:16px;"><button class="btn btn-gold btn-sm" onclick="saveDecision()">Save to Archive</button><button class="btn btn-out btn-sm" onclick="wReset()">New Decision</button></div></div></div>
+    </div>
+    <div class="card">
+      <div class="card-title">🗂 Decision Archive</div>
+      <div class="card-desc">Every decision you save. Watch your thinking evolve from reactive to CEO-level clarity over 12 months.</div>
+      <div class="card-hr"></div>
+      <div id="decArchive"><div class="empty" id="arcEmpty"><div class="empty-icon">◈</div><div class="empty-title">No Decisions Yet</div><div class="empty-desc">Complete the wizard and save your first decision.</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ MONTHLY GOAL PLANNER ══════════════ -->
+
+<div id="sec-goals" class="sec">
+  <div class="hero">
+    <div class="hero-eye">🎯 Plan · Focus · Accomplish</div>
+    <div class="hero-title">Monthly Goal Planner</div>
+    <div class="hero-desc">Set intentions across every area of your business each month. Guided prompts keep you focused on what actually matters at each stage of your build year.</div>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+    <label style="font-size:12px;color:var(--muted);">Planning for:</label>
+    <select class="fselect" id="goalMonth" onchange="loadGoals()" style="width:auto;padding:6px 12px;">
+      <option value="1">Month 1</option><option value="2">Month 2</option><option value="3">Month 3</option>
+      <option value="4">Month 4</option><option value="5">Month 5</option><option value="6">Month 6</option>
+      <option value="7">Month 7</option><option value="8">Month 8</option><option value="9">Month 9</option>
+      <option value="10">Month 10</option><option value="11">Month 11</option><option value="12">Month 12</option>
+    </select>
+  </div>
+  <div class="g2">
+    <div>
+      <div class="card">
+        <div class="card-title">💰 Revenue & Money Goals</div>
+        <div style="background:var(--petal);border-radius:9px;padding:12px;margin-bottom:13px;border-left:3px solid var(--gold);">
+          <div style="font-size:11px;color:var(--deep-rose);font-weight:500;margin-bottom:3px;">This Month's Prompt:</div>
+          <div style="font-size:12px;color:var(--charcoal);line-height:1.55;" id="goalPromptRevenue"></div>
+        </div>
+        <div class="fgroup"><label class="flabel">Revenue Target</label><input class="finput" id="g-rev-target" placeholder="e.g. $5,000" oninput="autoSaveGoals()"/></div>
+        <div class="fgroup"><label class="flabel">How I'll get there</label><textarea class="ftextarea" id="g-rev-how" placeholder="List 2-3 specific actions..." oninput="autoSaveGoals()"></textarea></div>
+      </div>
+      <div class="card">
+        <div class="card-title">📣 Marketing & Visibility Goals</div>
+        <div style="background:var(--petal);border-radius:9px;padding:12px;margin-bottom:13px;border-left:3px solid var(--rose);">
+          <div style="font-size:11px;color:var(--deep-rose);font-weight:500;margin-bottom:3px;">This Month's Prompt:</div>
+          <div style="font-size:12px;color:var(--charcoal);line-height:1.55;" id="goalPromptMarketing"></div>
+        </div>
+        <div class="fgroup"><label class="flabel">My Visibility Goal</label><input class="finput" id="g-mkt-goal" placeholder="e.g. Post 3x/week on Instagram" oninput="autoSaveGoals()"/></div>
+        <div class="fgroup"><label class="flabel">Platforms I'm focusing on</label><input class="finput" id="g-mkt-platforms" placeholder="e.g. Instagram + Email" oninput="autoSaveGoals()"/></div>
+      </div>
+      <div class="card">
+        <div class="card-title">🌸 Offer Goals</div>
+        <div style="background:var(--petal);border-radius:9px;padding:12px;margin-bottom:13px;border-left:3px solid var(--blush);">
+          <div style="font-size:11px;color:var(--deep-rose);font-weight:500;margin-bottom:3px;">This Month's Prompt:</div>
+          <div style="font-size:12px;color:var(--charcoal);line-height:1.55;" id="goalPromptOffer"></div>
+        </div>
+        <div class="fgroup"><label class="flabel">My current offer</label><input class="finput" id="g-offer-name" placeholder="e.g. 1:1 Coaching Package" oninput="autoSaveGoals()"/></div>
+        <div class="fgroup"><label class="flabel">Price</label><input class="finput" id="g-offer-price" placeholder="e.g. $1,500" oninput="autoSaveGoals()"/></div>
+        <div class="fgroup"><label class="flabel">Number of clients I want to enroll</label><input class="finput" id="g-offer-clients" placeholder="e.g. 3 clients" oninput="autoSaveGoals()"/></div>
+      </div>
+    </div>
+    <div>
+      <div class="card">
+        <div class="card-title">🧠 Mindset & Personal Goals</div>
+        <div style="background:var(--petal);border-radius:9px;padding:12px;margin-bottom:13px;border-left:3px solid var(--deep-rose);">
+          <div style="font-size:11px;color:var(--deep-rose);font-weight:500;margin-bottom:3px;">This Month's Prompt:</div>
+          <div style="font-size:12px;color:var(--charcoal);line-height:1.55;" id="goalPromptMindset"></div>
+        </div>
+        <div class="fgroup"><label class="flabel">My identity statement this month</label><input class="finput" id="g-identity" placeholder='e.g. "I am a confident CEO who prices her worth"' oninput="autoSaveGoals()"/></div>
+        <div class="fgroup"><label class="flabel">What I'm committed to letting go of</label><textarea class="ftextarea" id="g-letgo" placeholder="A belief, habit, or behaviour holding you back..." oninput="autoSaveGoals()"></textarea></div>
+      </div>
+      <div class="card">
+        <div class="card-title">⏱ Operations & Time Goals</div>
+        <div class="fgroup"><label class="flabel">Hours available per week</label><input class="finput" id="g-hours" placeholder="e.g. 20 hours/week" oninput="autoSaveGoals()"/></div>
+        <div class="fgroup"><label class="flabel">One thing to stop doing this month</label><input class="finput" id="g-stop" placeholder="e.g. Checking email hourly" oninput="autoSaveGoals()"/></div>
+        <div class="fgroup"><label class="flabel">One thing to start or delegate</label><input class="finput" id="g-start" placeholder="e.g. Hire VA for inbox management" oninput="autoSaveGoals()"/></div>
+      </div>
+      <div class="card">
+        <div class="card-title">📋 Monthly Must-Do Checklist</div>
+        <div class="card-desc">Core business tasks for every month of your build year.</div>
+        <div id="monthlyChecklist"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ PRICING CALCULATOR ══════════════ -->
+
+<div id="sec-pricing" class="sec">
+  <div class="hero">
+    <div class="hero-eye">💰 Module 6 — How to Talk About Money</div>
+    <div class="hero-title">Pricing Calculator</div>
+    <div class="hero-desc">Stop pricing from fear. This calculator helps you build a price based on your income goals, hours, and the value you deliver — so you charge what you're worth with confidence.</div>
+  </div>
+  <div class="g2" style="align-items:start;">
+    <div class="card">
+      <div class="card-title">Step 1 — Your Numbers</div>
+      <div class="card-desc">Fill in your real numbers. The calculator does the rest.</div>
+      <div class="fgroup"><label class="flabel">Monthly Income Goal</label><input class="finput" id="pc-income" type="number" placeholder="e.g. 5000" oninput="calcPrice()"/></div>
+      <div class="fgroup"><label class="flabel">Hours you want to work per month</label><input class="finput" id="pc-hours" type="number" placeholder="e.g. 60" oninput="calcPrice()"/></div>
+      <div class="fgroup"><label class="flabel">Hours per client per month</label><input class="finput" id="pc-clienthours" type="number" placeholder="e.g. 4" oninput="calcPrice()"/></div>
+      <div class="fgroup"><label class="flabel">Business expenses per month</label><input class="finput" id="pc-expenses" type="number" placeholder="e.g. 500" oninput="calcPrice()"/></div>
+      <div class="fgroup"><label class="flabel">What type of offer are you pricing?</label>
+        <select class="fselect" id="pc-type" onchange="calcPrice()">
+          <option value="1on1">1:1 Coaching Package</option>
+          <option value="group">Group Program</option>
+          <option value="vip">VIP Day</option>
+          <option value="retainer">Monthly Retainer</option>
+          <option value="course">Online Course</option>
+        </select>
+      </div>
+      <div id="calcResult"></div>
+    </div>
+    <div>
+      <div class="card">
+        <div class="card-title">💡 Pricing Principles</div>
+        <div class="card-desc">From Module 6: How to Talk About Money</div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div style="padding:13px;background:var(--petal);border-radius:10px;border-left:3px solid var(--gold);">
+            <div style="font-size:12px;font-weight:600;color:var(--deep-rose);margin-bottom:4px;">Price from value, not time</div>
+            <div style="font-size:12px;color:var(--charcoal);line-height:1.55;">What is the transformation worth to your client? A $10k result justifies a $2k price. Stop trading hours for dollars.</div>
+          </div>
+          <div style="padding:13px;background:var(--petal);border-radius:10px;border-left:3px solid var(--rose);">
+            <div style="font-size:12px;font-weight:600;color:var(--deep-rose);margin-bottom:4px;">Stop apologising for your price</div>
+            <div style="font-size:12px;color:var(--charcoal);line-height:1.55;">State your price clearly. Pause. Let them respond. The discomfort you feel is normal — it gets easier every time you hold your rate.</div>
+          </div>
+          <div style="padding:13px;background:var(--petal);border-radius:10px;border-left:3px solid var(--blush);">
+            <div style="font-size:12px;font-weight:600;color:var(--deep-rose);margin-bottom:4px;">Explain your value, not your hours</div>
+            <div style="font-size:12px;color:var(--charcoal);line-height:1.55;">"This includes X, Y, and Z, which together help you achieve [outcome]." Not: "I spend about 4 hours per week on this."</div>
+          </div>
+          <div style="padding:13px;background:var(--petal);border-radius:10px;border-left:3px solid var(--deep-rose);">
+            <div style="font-size:12px;font-weight:600;color:var(--deep-rose);margin-bottom:4px;">Handle hesitation with confidence</div>
+            <div style="font-size:12px;color:var(--charcoal);line-height:1.55;">"I understand it's an investment. What I can tell you is that clients who commit fully always see results. What's holding you back?"</div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">📝 My Pricing Notes</div>
+        <div class="card-desc">Record your current offers and prices. Update as you grow.</div>
+        <textarea class="ftextarea" id="pricingNotes" style="min-height:120px;" placeholder="e.g.&#10;1:1 Coaching — $1,500/mo&#10;VIP Day — $2,500&#10;Group Program — $997..." oninput="save('pricingNotes',this.value)"></textarea>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ LAUNCH CHECKLIST ══════════════ -->
+
+<div id="sec-launch" class="sec">
+  <div class="hero">
+    <div class="hero-eye">🚀 Module 3 & 4 — Test It · Show Up</div>
+    <div class="hero-title">Launch Checklist</div>
+    <div class="hero-desc">Everything you need to launch an offer — from validating the idea to making the sale. Check off each step as you go. You can reset and reuse this for every offer you launch.</div>
+  </div>
+  <div class="g2" style="align-items:start;">
+    <div>
+      <div class="card">
+        <div class="card-title">Phase 1 — Validate the Offer</div>
+        <div class="card-desc">From Module 3: Test it before you overbuild.</div>
+        <div id="launchPhase1"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Phase 2 — Build the Foundation</div>
+        <div class="card-desc">Simple infrastructure — nothing fancy needed yet.</div>
+        <div id="launchPhase2"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Phase 3 — Create Your Offer Page</div>
+        <div class="card-desc">From Module 7: Make it look real.</div>
+        <div id="launchPhase3"></div>
+      </div>
+    </div>
+    <div>
+      <div class="card">
+        <div class="card-title">Phase 4 — Build Visibility & Leads</div>
+        <div class="card-desc">Modules 4 & 5: Show up and say the right things.</div>
+        <div id="launchPhase4"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Phase 5 — Make the Sale</div>
+        <div class="card-desc">Module 6: Talk about money without apologising.</div>
+        <div id="launchPhase5"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Phase 6 — Deliver & Follow Up</div>
+        <div id="launchPhase6"></div>
+      </div>
+      <div style="display:flex;gap:8px;margin-top:4px;">
+        <button class="btn btn-rose" onclick="saveLaunch()">Save Progress</button>
+        <button class="btn btn-out btn-sm" onclick="resetLaunch()">Reset for New Launch</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ CONTENT PROMPTS ══════════════ -->
+
+<div id="sec-content" class="sec">
+  <div class="hero">
+    <div class="hero-eye">✍️ Module 5 — What Do You Actually Say?</div>
+    <div class="hero-title">Content Prompts</div>
+    <div class="hero-desc">30 prompts organised by your current module. Each one is designed to help you attract aligned clients, build trust, and grow your audience. Click any prompt to copy it or add notes.</div>
+  </div>
+  <div class="card">
+    <div class="card-title">Choose Your Module</div>
+    <div class="tabs" id="contentTabs"></div>
+    <div id="contentPrompts"></div>
+  </div>
+  <div class="card">
+    <div class="card-title">📅 My Content Planner</div>
+    <div class="card-desc">Drag prompts you like into your weekly plan.</div>
+    <div class="fgroup"><label class="flabel">This week I'm posting about:</label><textarea class="ftextarea" id="contentPlan" placeholder="Paste your chosen prompts here and plan your week..." oninput="save('contentPlan',this.value)" style="min-height:100px;"></textarea></div>
+  </div>
+</div>
+
+<!-- ══════════════ AUDIENCE BUILDER ══════════════ -->
+
+<div id="sec-audience" class="sec">
+  <div class="hero">
+    <div class="hero-eye">🌸 Modules 4, 8 & 10 — Show Up · Email · Get Seen</div>
+    <div class="hero-title">Audience Builder Guide</div>
+    <div class="hero-desc">A step-by-step guide to growing your audience across social media, email, and beyond. Work through each phase across your 12 months.</div>
+  </div>
+  <div class="tabs">
+    <button class="tab-btn active" onclick="audTab(this,'aud-social')">📱 Social Media</button>
+    <button class="tab-btn" onclick="audTab(this,'aud-email')">📧 Email List</button>
+    <button class="tab-btn" onclick="audTab(this,'aud-beyond')">🎤 Beyond Social</button>
+    <button class="tab-btn" onclick="audTab(this,'aud-tracker')">📊 My Tracker</button>
+  </div>
+  <div id="aud-social" class="tab-panel active">
+    <div class="g2">
+      <div class="card">
+        <div class="card-title">Module 4 — Where Should You Show Up?</div>
+        <div class="card-desc">You don't need to be everywhere. You need to be somewhere consistently.</div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div style="padding:13px;background:var(--petal);border-radius:10px;border-left:3px solid var(--rose);">
+            <div style="font-size:12px;font-weight:600;color:var(--deep-rose);margin-bottom:4px;">Choose ONE primary platform</div>
+            <div style="font-size:12px;color:var(--charcoal);line-height:1.55;">Instagram, Facebook, LinkedIn, or TikTok. Ask: Where do my ideal clients already spend time? Go there. Master it before adding another.</div>
+          </div>
+          <div style="padding:13px;background:var(--petal);border-radius:10px;border-left:3px solid var(--gold);">
+            <div style="font-size:12px;font-weight:600;color:var(--deep-rose);margin-bottom:4px;">The 3-type content formula</div>
+            <div style="font-size:12px;color:var(--charcoal);line-height:1.55;"><strong>Educate:</strong> Teach something valuable (40%)<br><strong>Connect:</strong> Share your story and personality (40%)<br><strong>Offer:</strong> Tell people how to work with you (20%)</div>
+          </div>
+          <div style="padding:13px;background:var(--petal);border-radius:10px;border-left:3px solid var(--blush);">
+            <div style="font-size:12px;font-weight:600;color:var(--deep-rose);margin-bottom:4px;">Consistency beats volume</div>
+            <div style="font-size:12px;color:var(--charcoal);line-height:1.55;">3 posts per week for 12 months beats 30 posts in January and burning out. Choose a frequency you can sustain, then stick to it.</div>
+          </div>
+          <div style="padding:13px;background:var(--petal);border-radius:10px;border-left:3px solid var(--deep-rose);">
+            <div style="font-size:12px;font-weight:600;color:var(--deep-rose);margin-bottom:4px;">No chasing trends</div>
+            <div style="font-size:12px;color:var(--charcoal);line-height:1.55;">Trends fade. Your message doesn't. Build a body of content around your expertise and your ideal client's real problems.</div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">My Social Media Plan</div>
+        <div class="fgroup"><label class="flabel">My Primary Platform</label><input class="finput" id="aud-platform" placeholder="e.g. Instagram" oninput="save('aud-platform',this.value)"/></div>
+        <div class="fgroup"><label class="flabel">My Handle / Profile URL</label><input class="finput" id="aud-handle" placeholder="e.g. @yourbusiness" oninput="save('aud-handle',this.value)"/></div>
+        <div class="fgroup"><label class="flabel">Posting frequency</label><input class="finput" id="aud-freq" placeholder="e.g. 3x per week" oninput="save('aud-freq',this.value)"/></div>
+        <div class="fgroup"><label class="flabel">My niche / what I post about</label><textarea class="ftextarea" id="aud-niche" placeholder="e.g. Business coaching for women service providers who want to replace their salary..." oninput="save('aud-niche',this.value)"></textarea></div>
+        <div class="fgroup"><label class="flabel">My content pillars (3-4 topics I return to)</label><textarea class="ftextarea" id="aud-pillars" placeholder="e.g. &#10;1. Pricing confidence&#10;2. Business mindset&#10;3. Offer creation&#10;4. Client attraction..." oninput="save('aud-pillars',this.value)"></textarea></div>
+      </div>
+    </div>
+  </div>
+  <div id="aud-email" class="tab-panel">
+    <div class="g2">
+      <div class="card">
+        <div class="card-title">Module 8 — Start Building an Email List</div>
+        <div class="card-desc">You need one. No complicated funnels. Just foundation.</div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div style="padding:13px;background:var(--petal);border-radius:10px;border-left:3px solid var(--rose);">
+            <div style="font-size:12px;font-weight:600;color:var(--deep-rose);margin-bottom:4px;">Why you need an email list</div>
+            <div style="font-size:12px;color:var(--charcoal);line-height:1.55;">Social media accounts can disappear overnight. Your email list is an asset you own. Even 200 engaged subscribers outperforms 5,000 passive followers.</div>
+          </div>
+          <div style="padding:13px;background:var(--petal);border-radius:10px;border-left:3px solid var(--gold);">
+            <div style="font-size:12px;font-weight:600;color:var(--deep-rose);margin-bottom:4px;">Create something simple to offer</div>
+            <div style="font-size:12px;color:var(--charcoal);line-height:1.55;">A one-page checklist, a short guide, a resource list — something genuinely useful that your ideal client would want enough to give you their email for.</div>
+          </div>
+          <div style="padding:13px;background:var(--petal);border-radius:10px;border-left:3px solid var(--blush);">
+            <div style="font-size:12px;font-weight:600;color:var(--deep-rose);margin-bottom:4px;">What to send</div>
+            <div style="font-size:12px;color:var(--charcoal);line-height:1.55;">One email per week is enough. Share something valuable, a story, or a behind-the-scenes. Always end with one clear call to action.</div>
+          </div>
+          <div style="padding:13px;background:var(--petal);border-radius:10px;border-left:3px solid var(--deep-rose);">
+            <div style="font-size:12px;font-weight:600;color:var(--deep-rose);margin-bottom:4px;">Recommended platforms</div>
+            <div style="font-size:12px;color:var(--charcoal);line-height:1.55;">Mailchimp (free to start), ConvertKit / Kit (great for creators), Flodesk (beautiful templates). Pick one and start. Perfection is not the goal.</div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">My Email Setup</div>
+        <div class="fgroup"><label class="flabel">Email platform I'm using</label><input class="finput" id="aud-esp" placeholder="e.g. Mailchimp" oninput="save('aud-esp',this.value)"/></div>
+        <div class="fgroup"><label class="flabel">My lead magnet / freebie</label><input class="finput" id="aud-leadmag" placeholder="e.g. Free pricing guide" oninput="save('aud-leadmag',this.value)"/></div>
+        <div class="fgroup"><label class="flabel">Current list size</label><input class="finput" id="aud-listsize" placeholder="e.g. 0 — starting now!" oninput="save('aud-listsize',this.value)"/></div>
+        <div class="fgroup"><label class="flabel">Email sending frequency</label><input class="finput" id="aud-emailfreq" placeholder="e.g. Weekly, every Tuesday" oninput="save('aud-emailfreq',this.value)"/></div>
+        <div class="fgroup"><label class="flabel">My welcome email — what I want to say</label><textarea class="ftextarea" id="aud-welcome" placeholder="Draft your welcome email here..." oninput="save('aud-welcome',this.value)"></textarea></div>
+      </div>
+    </div>
+  </div>
+  <div id="aud-beyond" class="tab-panel">
+    <div class="g2">
+      <div class="card">
+        <div class="card-title">Module 10 — Get Seen Beyond Social Media</div>
+        <div class="card-desc">Simple PR basics. How to build credibility. Visibility with purpose.</div>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <div style="padding:13px;background:var(--petal);border-radius:10px;border-left:3px solid var(--rose);"><div style="font-size:12px;font-weight:600;color:var(--deep-rose);margin-bottom:3px;">Podcasts</div><div style="font-size:12px;color:var(--charcoal);line-height:1.55;">Pitch yourself as a guest on podcasts your ideal clients listen to. You don't need a big following — you need a clear topic and a good pitch.</div></div>
+          <div style="padding:13px;background:var(--petal);border-radius:10px;border-left:3px solid var(--gold);"><div style="font-size:12px;font-weight:600;color:var(--deep-rose);margin-bottom:3px;">Collaborations</div><div style="font-size:12px;color:var(--charcoal);line-height:1.55;">Partner with complementary businesses for joint webinars, Instagram lives, or email swaps. Their audience becomes your audience.</div></div>
+          <div style="padding:13px;background:var(--petal);border-radius:10px;border-left:3px solid var(--blush);"><div style="font-size:12px;font-weight:600;color:var(--deep-rose);margin-bottom:3px;">Speaking & Events</div><div style="font-size:12px;color:var(--charcoal);line-height:1.55;">Local networking events, online summits, virtual workshops. Every time you speak you build credibility and attract new leads.</div></div>
+          <div style="padding:13px;background:var(--petal);border-radius:10px;border-left:3px solid var(--deep-rose);"><div style="font-size:12px;font-weight:600;color:var(--deep-rose);margin-bottom:3px;">Referrals</div><div style="font-size:12px;color:var(--charcoal);line-height:1.55;">Ask happy clients to refer you. Make it easy — give them exact language to use. A warm referral converts at 5x the rate of cold outreach.</div></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">My Beyond-Social Plan</div>
+        <div class="fgroup"><label class="flabel">Podcasts I want to pitch</label><textarea class="ftextarea" id="aud-podcasts" placeholder="e.g. The Goal Digger Podcast, Online Marketing Made Easy..." oninput="save('aud-podcasts',this.value)"></textarea></div>
+        <div class="fgroup"><label class="flabel">Potential collaboration partners</label><textarea class="ftextarea" id="aud-collabs" placeholder="e.g. Web designers, accountants, other coaches in adjacent niches..." oninput="save('aud-collabs',this.value)"></textarea></div>
+        <div class="fgroup"><label class="flabel">Events or speaking opportunities to pursue</label><textarea class="ftextarea" id="aud-events" placeholder="e.g. Local Chamber of Commerce, online summits..." oninput="save('aud-events',this.value)"></textarea></div>
+      </div>
+    </div>
+  </div>
+  <div id="aud-tracker" class="tab-panel">
+    <div class="card">
+      <div class="card-title">📊 Audience Growth Tracker</div>
+      <div class="card-desc">Update monthly. Watch your numbers grow across the year.</div>
+      <div style="overflow-x:auto;"><table id="audTable" style="width:100%;border-collapse:collapse;font-size:12px;"></table></div>
+    </div>
+    <div class="card" style="margin-top:0;">
+      <div class="card-title">Update This Month</div>
+      <div class="g2">
+        <div class="fgroup"><label class="flabel">Instagram Followers</label><input class="finput" id="aud-ig" placeholder="0" oninput="saveAudTracker()"/></div>
+        <div class="fgroup"><label class="flabel">Facebook Followers</label><input class="finput" id="aud-fb" placeholder="0" oninput="saveAudTracker()"/></div>
+        <div class="fgroup"><label class="flabel">Email Subscribers</label><input class="finput" id="aud-email-count" placeholder="0" oninput="saveAudTracker()"/></div>
+        <div class="fgroup"><label class="flabel">LinkedIn Connections</label><input class="finput" id="aud-li" placeholder="0" oninput="saveAudTracker()"/></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ SALES TEMPLATES ══════════════ -->
+
+<div id="sec-templates" class="sec">
+  <div class="hero">
+    <div class="hero-eye">📄 Modules 5, 6 & 7 — Say It · Price It · Make It Real</div>
+    <div class="hero-title">Sales Templates</div>
+    <div class="hero-desc">Done-for-you templates for your sales page, sales emails, and discovery call. Personalise them with your offer details — everything in [brackets] is yours to replace.</div>
+  </div>
+  <div class="tabs">
+    <button class="tab-btn active" onclick="tmplTab(this,'t-salespage')">📄 Sales Page</button>
+    <button class="tab-btn" onclick="tmplTab(this,'t-emails')">📧 Sales Emails</button>
+    <button class="tab-btn" onclick="tmplTab(this,'t-call')">📞 Discovery Call</button>
+    <button class="tab-btn" onclick="tmplTab(this,'t-funnel')">🔄 Simple Funnel</button>
+  </div>
+
+  <div id="t-salespage" class="tab-panel active">
+    <div class="card">
+      <div class="card-title">Sales Page Template</div>
+      <div class="card-desc">Based on Module 7: Make It Look Real. Simple, clear, no fluff. Replace everything in [brackets] with your details.</div>
+      <div id="salesPageSections"></div>
+    </div>
+  </div>
+
+  <div id="t-emails" class="tab-panel">
+    <div class="card">
+      <div class="card-title">3-Email Sales Sequence</div>
+      <div class="card-desc">Send these over 5 days when launching an offer. Edit each one to match your voice.</div>
+      <div id="salesEmailTemplates"></div>
+    </div>
+  </div>
+
+  <div id="t-call" class="tab-panel">
+    <div class="card">
+      <div class="card-title">Discovery Call Script</div>
+      <div class="card-desc">A proven structure for a 30-45 minute sales call. Use this as your guide — not a word-for-word script. Be human, listen deeply, and lead with their outcome.</div>
+      <div id="callScript"></div>
+    </div>
+  </div>
+
+  <div id="t-funnel" class="tab-panel">
+    <div class="card">
+      <div class="card-title">Simple Funnel Map</div>
+      <div class="card-desc">Module 8 principle: No complicated funnels. Just foundation. Here's the simple funnel that works for most service-based businesses at your stage.</div>
+      <div id="funnelMap"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ HIRE A VA ══════════════ -->
+
+<div id="sec-va" class="sec">
+  <div class="hero">
+    <div class="hero-eye">🤝 Module 9 — When Do You Need Help?</div>
+    <div class="hero-title">Hire a VA</div>
+    <div class="hero-desc">Knowing when and how to hire a Virtual Assistant is one of the biggest growth moves you'll make. This tool helps you figure out what you need, write the job ad, and hire with confidence.</div>
+  </div>
+  <div class="tabs">
+    <button class="tab-btn active" onclick="vaTab(this,'va-ready')">Am I Ready?</button>
+    <button class="tab-btn" onclick="vaTab(this,'va-builder')">Job Ad Builder</button>
+    <button class="tab-btn" onclick="vaTab(this,'va-checklist')">Hiring Checklist</button>
+  </div>
+
+  <div id="va-ready" class="tab-panel active">
+    <div class="g2">
+      <div class="card">
+        <div class="card-title">Module 9 — When Do You Need Help?</div>
+        <div style="display:flex;flex-direction:column;gap:9px;">
+          <div style="padding:13px;background:var(--petal);border-radius:10px;border-left:3px solid var(--gold);">
+            <div style="font-size:12px;font-weight:600;color:var(--deep-rose);margin-bottom:3px;">When to hire</div>
+            <div style="font-size:12px;color:var(--charcoal);line-height:1.55;">When a task takes you more than 2 hours per week and doesn't require your specific expertise — that task belongs to a VA. Your time is worth more than inbox management.</div>
+          </div>
+          <div style="padding:13px;background:var(--petal);border-radius:10px;border-left:3px solid var(--rose);">
+            <div style="font-size:12px;font-weight:600;color:var(--deep-rose);margin-bottom:3px;">When not to hire</div>
+            <div style="font-size:12px;color:var(--charcoal);line-height:1.55;">Don't hire before you have consistent revenue to cover the cost. Don't hire to avoid tasks you haven't systemised yet — a VA needs a process to follow.</div>
+          </div>
+          <div style="padding:13px;background:var(--petal);border-radius:10px;border-left:3px solid var(--blush);">
+            <div style="font-size:12px;font-weight:600;color:var(--deep-rose);margin-bottom:3px;">What to track financially</div>
+            <div style="font-size:12px;color:var(--charcoal);line-height:1.55;">Know your numbers before hiring. Can you cover VA costs from one client payment? Budget for 5-10 hours/week at $25-50/hour to start.</div>
+          </div>
+          <div style="padding:13px;background:var(--petal);border-radius:10px;border-left:3px solid var(--deep-rose);">
+            <div style="font-size:12px;font-weight:600;color:var(--deep-rose);margin-bottom:3px;">Speak to a lawyer or accountant first</div>
+            <div style="font-size:12px;color:var(--charcoal);line-height:1.55;">Before you hire: understand contractor vs employee classification in your country. Get advice on contracts, tax implications, and how to pay properly.</div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">Tasks to Delegate First</div>
+        <div class="card-desc">Tick what currently eats your time. These are your first VA tasks.</div>
+        <div id="delegateList"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="va-builder" class="tab-panel">
+    <div class="g2" style="align-items:start;">
+      <div class="card">
+        <div class="card-title">Build Your Job Ad</div>
+        <div class="card-desc">Answer these questions and your job ad generates automatically.</div>
+        <div class="fgroup"><label class="flabel">Your business type</label><input class="finput" id="va-biz" placeholder="e.g. Business coach for women entrepreneurs"/></div>
+        <div class="fgroup"><label class="flabel">Hours per week needed</label><input class="finput" id="va-hrs" placeholder="e.g. 5-10 hours per week"/></div>
+        <div class="fgroup"><label class="flabel">Hourly rate or budget</label><input class="finput" id="va-rate" placeholder="e.g. $25-35/hour"/></div>
+        <div class="fgroup"><label class="flabel">Top 3-5 tasks you need help with</label><textarea class="ftextarea" id="va-tasks" placeholder="e.g. &#10;- Email inbox management&#10;- Scheduling social posts&#10;- Client onboarding admin&#10;- Research tasks"></textarea></div>
+        <div class="fgroup"><label class="flabel">Skills required</label><textarea class="ftextarea" id="va-skills" placeholder="e.g. &#10;- Proficient in Google Workspace&#10;- Experience with Canva&#10;- Strong written English&#10;- Detail-oriented"></textarea></div>
+        <div class="fgroup"><label class="flabel">Timezone preference</label><input class="finput" id="va-tz" placeholder="e.g. EST ± 2 hours"/></div>
+        <button class="btn btn-rose" onclick="generateVAad()">Generate My Job Ad ✦</button>
+      </div>
+      <div class="card">
+        <div class="card-title">Your Job Ad</div>
+        <div class="card-desc">Copy this and post to Upwork, OnlineJobs.ph, or Facebook VA groups.</div>
+        <div id="vaAdOutput"><div class="empty"><div class="empty-icon">📝</div><div class="empty-title">Fill in the form to generate</div><div class="empty-desc">Your customised job ad will appear here, ready to copy and post.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="va-checklist" class="tab-panel">
+    <div class="g2">
+      <div class="card">
+        <div class="card-title">Before You Hire</div>
+        <div id="vaPreChecklist"></div>
+      </div>
+      <div class="card">
+        <div class="card-title">After You Hire</div>
+        <div id="vaPostChecklist"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /main -->
+</div><!-- /appShell -->
+
+<!-- MODALS -->
+
+<div class="overlay" id="addPM">
+  <div class="modal">
+    <div class="modal-title">Add a Monthly Priority</div>
+    <div class="modal-sub">Be specific. "Do more marketing" → "Post on Instagram 3x/week and send 1 email." Specific actions get done.</div>
+    <div class="fgroup"><label class="flabel">Priority Action</label><input class="finput" id="pText" placeholder="e.g. Book 5 discovery calls with warm leads"/></div>
+    <div class="fgroup"><label class="flabel">Due By</label><input class="finput" type="date" id="pDue"/></div>
+    <div class="fgroup" style="margin-bottom:0;"><label class="flabel">Category</label>
+      <select class="fselect" id="pCat"><option>Marketing</option><option>Sales</option><option>Offers</option><option>Operations</option><option>Mindset</option><option>Finance</option></select>
+    </div>
+    <div class="modal-actions"><button class="btn btn-rose" onclick="addPriority()">Add Priority</button><button class="btn btn-out" onclick="closeModal('addPM')">Cancel</button></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ════ DATA ════
+const K='eic2_';
+function save(k,v){try{localStorage.setItem(K+k,JSON.stringify(v));}catch(e){}}
+function load(k,d){try{const v=localStorage.getItem(K+k);return v?JSON.parse(v):d;}catch(e){return d;}}
+
+// ════ MODULES ════
+const MODULES=[
+  {n:1,title:"What Should You Build?",outcomes:"What kind of business fits your life · What you're great at · What people pay for · What not to build"},
+  {n:2,title:"What Are You Selling?",outcomes:"One clear offer · A simple explanation of what you do · A starting price · Confidence saying it out loud"},
+  {n:3,title:"Test It Before You Overbuild",outcomes:"How to see if people actually want this · How to talk about it without a website · How to get your first yes"},
+  {n:4,title:"Where Should You Show Up?",outcomes:"Instagram? Facebook? TikTok? · What makes sense for you · How often to show up · One focused plan"},
+  {n:5,title:"What Do You Actually Say?",outcomes:"How to talk about the problem you solve · How to stop sounding generic · How to make people understand your value"},
+  {n:6,title:"How to Talk About Money",outcomes:"How to price without apologising · How to explain your value · How to handle hesitation · Stop avoiding money conversations"},
+  {n:7,title:"Make It Look Real",outcomes:"A simple website structure · A clear offer page · Professional presence basics · Not fancy, just credible"},
+  {n:8,title:"Start Building an Email List",outcomes:"Why you need one · How to create something simple to offer · What to send · No complicated funnels"},
+  {n:9,title:"When Do You Need Help?",outcomes:"When to hire · When not to hire · When to speak to a lawyer or accountant · What to track financially"},
+  {n:10,title:"Get Seen Beyond Social Media",outcomes:"Simple PR basics · How to talk to podcasts · How to build credibility · Visibility with purpose"},
+  {n:11,title:"Clean It Up and Raise Your Prices",outcomes:"Refine your offer · Remove what's not working · Increase confidence · Strengthen profit · This is maturity"},
+  {n:12,title:"Build Your Next-Year Plan",outcomes:"A 12-month roadmap · Revenue goals · A growth plan · Personal freedom alignment · You leave with direction"}
+];
+
+// ════ LAUNCH CHECKLIST DATA ════
+const LAUNCH_ITEMS={
+  phase1:["Write a 1-sentence description of who you help and what result they get","List 3 people who would benefit from your offer right now","Reach out to those 3 people and have a real conversation about the problem","Ask: Would you pay for a solution to this? What would make it a yes?","Get at least 1 verbal yes before building anything else"],
+  phase2:["Set up a simple way to take payment (Stripe, PayPal, or direct transfer)","Create a basic intake form (Google Form is fine)","Draft a simple agreement or terms doc","Set up a folder to store client materials","Choose your communication tool (email, Voxer, Slack, etc.)"],
+  phase3:["Write your offer headline: Who it's for + the result they get","List what's included in bullet points — be specific","State your price clearly on the page — no hiding it","Add 1-2 testimonials or social proof (or explain your process if you're new)","Include one clear call to action: Book a call / Buy now / Apply"],
+  phase4:["Post about the problem your offer solves — 3x this week","Share a story of a transformation (client story or your own)","Go live or post a video explaining who this is for","DM 5 warm leads personally — not a copy-paste, a real message","Ask 3 past clients or connections for a referral"],
+  phase5:["Book all discovery calls for the same 2-day window","Prepare 5 questions to ask on the call (see Discovery Call Script)","State your price and pause — let them respond","Handle objections with curiosity, not panic","Follow up within 24 hours with a clear next step"],
+  phase6:["Send a welcome email within 1 hour of signing","Deliver any promised materials within 24 hours","Book the first session or kickoff call","Ask for a testimonial at the 30-day mark","Celebrate the launch — you did it!"]
+};
+
+// ════ CONTENT PROMPTS ════
+const CONTENT_PROMPTS={
+  1:["What made you decide to start your own business? Share the real story.","The one thing most people get wrong when starting a business is...","You don't need a perfect business plan. You need to start with this one thing.","What kind of business actually fits your life? Here's how to figure it out.","The question I wish I had asked myself before starting my business."],
+  2:["Here's the simplest way to explain what you do (and why most people overcomplicate it).","One clear offer beats five confusing ones. Here's why.","What I charge and why — a transparent look at my pricing.","The problem with trying to sell everything to everyone.","How to name your offer so clients immediately understand the value."],
+  3:["Why I tested my offer before building the website, the brand, or anything else.","The fastest way to know if people will actually pay for your idea.","You don't need a website to land your first client. Here's what you do need.","My first sale came before I had anything fancy. Here's how.","Validation > Perfection. Why done beats overbuilt every time."],
+  4:["The social media platform I chose and exactly why I chose it.","How often I post and what changed when I stopped trying to do it all.","You don't have to be on every platform. You have to be consistent on one.","What I post about (and the 3-content-type formula I follow).","The truth about trends — and why I stopped chasing them."],
+  5:["The sentence I use to describe what I do (and why it works).","How I stop sounding generic on social media — my process.","The difference between talking about features and talking about transformation.","A before/after story that explains my clients' results better than any sales page.","What to say when someone asks what you do at a networking event."],
+  6:["The mindset shift that changed how I talk about my prices.","I used to apologise every time I said my rate. Then I did this.","How to respond when a potential client says 'that's a lot of money.'","Why I stopped charging hourly and what I do instead.","Pricing tip: stop comparing your price to your competitors. Compare it to the result."],
+  7:["My website doesn't need to be fancy — it needs to do this.","The 3 pages every service business needs (and the ones you don't yet).","Why I launched before my website was perfect — and what happened.","What 'looking real' actually means for a new business.","Tools I use to run my business without a big tech budget."],
+  8:["Why your email list is the most valuable asset in your business.","How I got my first 100 email subscribers (no paid ads involved).","The lead magnet that works — and the type that doesn't.","What I send to my email list every week (and why it keeps growing).","Social media vs. email: which drives more actual sales? My honest answer."],
+  9:["The task I finally handed off to a VA — and how it changed my week.","Signs you're ready to hire help (and signs you're not yet).","What I wish someone had told me before I hired my first assistant.","How I figured out what to delegate first.","Hiring a VA: what to look for, what to pay, and where to find great people."],
+  10:["How I pitched myself to a podcast with no big following — and got a yes.","The collaboration that brought me 30 new leads in one week.","Simple PR for small businesses: what actually works without a PR budget.","How speaking at one event changed my visibility for months.","The referral system I put in place that brings me clients on autopilot."],
+  11:["I raised my prices and here's exactly what happened.","How I cleaned up my offer suite and started making more with less.","The offer I retired — and why it was the right decision.","Maturity in business looks like knowing when to stop as much as knowing when to start.","What I changed in month 11 that made year 2 possible."],
+  12:["How I'm planning my next 12 months — the exact framework I use.","My revenue goal for next year and the plan to get there.","What year 1 taught me about building a business on my terms.","The things I'm carrying into year 2 — and the things I'm leaving behind.","Your year 1 matters even when it doesn't look like what you expected."]
+};
+
+// ════ MONTHLY GOAL PROMPTS ════
+const GOAL_PROMPTS=[
+  {rev:"What income would feel like a real start? Set a first-month target that stretches you but doesn't require clients you don't have yet.",mkt:"Choose ONE platform. Just one. Decide where you'll show up and commit to it for the next 30 days.",offer:"Do you know exactly what you're selling and to whom? Write your one clear offer and your starting price.",mind:"What old story about money, success, or worthiness do you need to release to build this business?"},
+  {rev:"How many clients do you need to hit your target? Work backwards from your goal to a specific number.",mkt:"Start posting consistently this month. 3x per week minimum. Done beats perfect.",offer:"Practice saying what you do out loud. Say it to 5 people this month and refine it based on their reaction.",mind:"You are allowed to take up space. What would you do this month if you fully believed in your offer?"},
+  {rev:"You need a real conversation, not a perfect funnel. Who can you talk to this month who might want what you offer?",mkt:"Post about the problem you solve — not just what you do. The problem attracts the client.",offer:"Have you gotten a verbal yes from anyone? That's your validation. Now get 3 more conversations.",mind:"What fear is getting in the way of reaching out to potential clients? Name it and act anyway."},
+  {rev:"Choose your platform and post consistently. Visibility drives revenue. Silence doesn't.",mkt:"Where are your ideal clients spending time? That's where you need to be — not where you like spending time.",offer:"Does your offer have a clear transformation? If someone asked 'what do I get?', can you answer in one sentence?",mind:"Consistency feels boring before it pays off. Trust the process this month."},
+  {rev:"Great messaging = more sales. Spend time this month making your words more specific and client-focused.",mkt:"Write content that speaks directly to the problem your ideal client is googling at 11pm. That's the content that converts.",offer:"Refine your offer description this month. The clearer you are, the easier it is to sell.",mind:"Your story is your marketing. What experience have you had that makes you the right person to help your clients?"},
+  {rev:"It's time to talk about money without apologising. What's the price your offer is worth? Charge that.",mkt:"Feature a client result in your content this month (with permission). Social proof converts.",offer:"Have you raised your price recently? If not — is it because the value isn't there, or because of fear? Be honest.",mind:"Money conversations get easier with practice. Book 3 discovery calls this month even if it scares you."},
+  {rev:"With a real online presence, your credibility goes up and your conversion rate follows. Invest time in your foundations.",mkt:"Does your website or offer page clearly explain who you help, how you help them, and what to do next?",offer:"Your offer page should have: headline, what's included, your price, and one call to action. Does yours have all four?",mind:"Professional doesn't mean perfect. It means clear, honest, and easy to understand."},
+  {rev:"Your email list is an asset. How many subscribers can you add this month? Set a specific target.",mkt:"Create a lead magnet this month — something genuinely useful that your ideal client would want.",offer:"Add an email opt-in to your offer page and all your social profiles this month.",mind:"You are building something that lasts. Slow list growth is still growth."},
+  {rev:"Are you doing everything alone? What tasks are costing you money because they're taking your time?",mkt:"Delegate one recurring marketing task this month — even if it's just scheduling posts.",offer:"Can you take on more clients if you had support? Map out what you'd need to scale.",mind:"Asking for help is not weakness. It's what CEOs do."},
+  {rev:"Diversify your visibility this month. One new channel: a podcast pitch, a collaboration, or a speaking opportunity.",mkt:"Pitch yourself to one podcast this month. Write and send the email. The worst they can say is no.",offer:"Partner with one complementary business for a cross-promotion this month.",mind:"You belong in more rooms than you think. Give yourself permission to walk in."},
+  {rev:"Look at your numbers. What's working? What's not? Revenue doesn't lie.",mkt:"Cut what isn't converting. Double down on what is. Simplify your marketing.",offer:"Raise your prices this month. You have more credibility and results than when you started. Price accordingly.",mind:"Maturity means making hard decisions with confidence. What needs to change?"},
+  {rev:"Set a real revenue goal for next year — not a hope, a plan. Work backwards from the number.",mkt:"Build your content and visibility plan for year 2. What will you do differently?",offer:"What is your signature offer for year 2? Refine it based on everything you learned.",mind:"You made it through year 1. That is not a small thing. Acknowledge how far you've come before planning how far you'll go."}
+];
+
+// ════ AFFIRMATIONS ════
+const AFFS=["I am building a business aligned with my life, my values, and my worth.","I price from value, not from fear. My rate reflects my results.","I make decisions from confidence. My gut knows. I trust it.","Every consistent action I take compounds into lasting growth.","I am exactly where I need to be. I keep going anyway.","I attract clients who value my work and pay my full rate.","Visibility is my superpower. The right people find me when I show up.","I am a CEO. I lead with clarity and act with intention.","Done and imperfect beats perfect and unpublished every time.","I release what no longer serves my vision. I make room for what does.","My success is not an accident. It is the result of my commitment.","I am worthy of the revenue, freedom, and impact I desire.","Saying no to the wrong things opens the door to the right ones.","I belong in every room I walk into. I earned my seat at the table.","This is my build year. I am showing up for it."];
+
+// ════ SETUP ════
+function init(){
+  const p=load('profile',null);
+  if(!p){
+    document.getElementById('setupScreen').style.display='flex';
+    document.getElementById('appShell').style.display='none';
+  } else {
+    document.getElementById('setupScreen').style.display='none';
+    document.getElementById('appShell').style.display='flex';
+    boot(p);
+  }
+}
+function completeSetup(){
+  const name=document.getElementById('setupName').value.trim();
+  const month=parseInt(document.getElementById('setupMonth').value);
+  if(!name){showToast('Please enter your name!');return;}
+  save('profile',{name,startMonth:month,created:new Date().toISOString()});
+  document.getElementById('setupScreen').style.display='none';
+  document.getElementById('appShell').style.display='flex';
+  boot({name,startMonth:month});
+}
+function boot(p){
+  const m=p.startMonth||1;
+  document.getElementById('heroM').textContent='Month '+m;
+  ['metricMonth','sprintMonth','goalMonth'].forEach(id=>{const el=document.getElementById(id);if(el)el.value=m;});
+  buildModGrid();
+  loadMetrics();
+  loadSprint();
+  loadGoals();
+  buildLaunchChecklist();
+  buildContentTabs();
+  buildTemplates();
+  buildVAtools();
+  renderDecisions();
+  renderWins();
+  newAff();
+  // Load saved audience fields
+  ['aud-platform','aud-handle','aud-freq','aud-niche','aud-pillars','aud-esp','aud-leadmag','aud-listsize','aud-emailfreq','aud-welcome','aud-podcasts','aud-collabs','aud-events'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el){const v=load(id,'');if(v)el.value=v;}
+  });
+  const pn=document.getElementById('pricingNotes');
+  if(pn){const v=load('pricingNotes','');if(v)pn.value=v;}
+  const cp=document.getElementById('contentPlan');
+  if(cp){const v=load('contentPlan','');if(v)cp.value=v;}
+  buildAudTracker();
+}
+
+// ════ NAV ════
+function nav(id,btn){
+  document.querySelectorAll('.sec').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('sec-'+id).classList.add('active');
+  if(btn)btn.classList.add('active');
+  closeSidebar();
+  window.scrollTo(0,0);
+}
+function toggleSidebar(){
+  const sb=document.getElementById('sidebar');
+  const hb=document.getElementById('hamburger');
+  const ov=document.getElementById('sidebarOverlay');
+  sb.classList.toggle('open');
+  hb.classList.toggle('open');
+  ov.classList.toggle('open');
+}
+function closeSidebar(){
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('open');
+  document.getElementById('sidebarOverlay').classList.remove('open');
+}
+function mbnActive(id){
+  document.querySelectorAll('.mbn-btn').forEach(b=>b.classList.remove('active'));
+  const el=document.getElementById('mbn-'+id);
+  if(el)el.classList.add('active');
+}
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3000);}
+function savedPulse(){document.getElementById('saveLabel').textContent='Saved ✓';setTimeout(()=>document.getElementById('saveLabel').textContent='All changes saved',2000);}
+function openModal(id){document.getElementById(id).classList.add('open');}
+function closeModal(id){document.getElementById(id).classList.remove('open');}
+
+// ════ MODULES ════
+function buildModGrid(){
+  const status=load('modStatus',{});
+  const html=MODULES.map(m=>{
+    const s=status[m.n]||'pending';
+    return `<div class="mod-card ${s==='current'?'current':s==='done'?'complete':''}" onclick="toggleMod(${m.n})">
+      <div class="mod-num">MODULE ${m.n}</div>
+      <div class="mod-title">${m.title}</div>
+      <div class="mod-status">${s==='done'?'✓ Complete':s==='current'?'● In Progress':'○ Not Started'}</div>
+    </div>`;
+  }).join('');
+  document.getElementById('modGrid').innerHTML=html;
+}
+function toggleMod(n){
+  const s=load('modStatus',{});
+  const cur=s[n]||'pending';
+  s[n]=cur==='pending'?'current':cur==='current'?'done':'pending';
+  save('modStatus',s);
+  buildModGrid();
+  showToast(s[n]==='done'?`Module ${n} marked complete! ✦`:s[n]==='current'?`Module ${n} set as current`:`Module ${n} reset`);
+}
+
+// ════ METRICS ════
+function autoSave(){
+  const m=document.getElementById('metricMonth').value;
+  save('metrics_'+m,{rev:document.getElementById('m-rev').value,leads:document.getElementById('m-leads').value,aud:document.getElementById('m-aud').value,sold:document.getElementById('m-sold').value,goal:document.getElementById('m-goal').value});
+  savedPulse();buildYearTable();
+}
+function loadMetrics(){
+  const m=document.getElementById('metricMonth').value;
+  const d=load('metrics_'+m,{});
+  document.getElementById('m-rev').value=d.rev||'';
+  document.getElementById('m-leads').value=d.leads||'';
+  document.getElementById('m-aud').value=d.aud||'';
+  document.getElementById('m-sold').value=d.sold||'';
+  document.getElementById('m-goal').value=d.goal||'';
+  buildYearTable();
+}
+function buildYearTable(){
+  let html=`<thead><tr style="border-bottom:1px solid var(--border);">
+    <th style="text-align:left;padding:6px 10px;color:var(--muted);font-weight:500;font-size:11px;">Month</th>
+    <th style="text-align:right;padding:6px 10px;color:var(--muted);font-weight:500;font-size:11px;">Revenue</th>
+    <th style="text-align:right;padding:6px 10px;color:var(--muted);font-weight:500;font-size:11px;">Leads</th>
+    <th style="text-align:right;padding:6px 10px;color:var(--muted);font-weight:500;font-size:11px;">Audience</th>
+    <th style="text-align:right;padding:6px 10px;color:var(--muted);font-weight:500;font-size:11px;">Sold</th>
+  </tr></thead><tbody>`;
+  for(let i=1;i<=12;i++){
+    const d=load('metrics_'+i,{});
+    const has=d.rev||d.leads||d.aud||d.sold;
+    html+=`<tr style="border-bottom:1px solid var(--border);${!has?'opacity:.45':''}">
+      <td style="padding:6px 10px;font-size:12px;font-weight:500;">${MODULES[i-1].title.split(' ').slice(0,3).join(' ')}</td>
+      <td style="text-align:right;padding:6px 10px;font-size:12px;">${d.rev||'—'}</td>
+      <td style="text-align:right;padding:6px 10px;font-size:12px;">${d.leads||'—'}</td>
+      <td style="text-align:right;padding:6px 10px;font-size:12px;">${d.aud||'—'}</td>
+      <td style="text-align:right;padding:6px 10px;font-size:12px;">${d.sold||'—'}</td>
+    </tr>`;
+  }
+  html+='</tbody>';
+  document.getElementById('yearTable').innerHTML=html;
+}
+
+// ════ SPRINT ════
+let spData={priorities:[],checkins:[]};
+function loadSprint(){
+  const m=document.getElementById('sprintMonth').value;
+  spData=load('sprint_'+m,{priorities:[],checkins:[]});
+  renderPriorities();renderTimeline();
+}
+function saveSprint(){save('sprint_'+document.getElementById('sprintMonth').value,spData);savedPulse();}
+function renderPriorities(){
+  const list=document.getElementById('priorityList');
+  const empty=document.getElementById('pEmpty');
+  const btn=document.getElementById('addPBtn');
+  if(spData.priorities.length===0){list.innerHTML='';empty.style.display='block';}
+  else{
+    empty.style.display='none';
+    list.innerHTML=spData.priorities.map((p,i)=>`
+      <div class="list-item ${p.done?'done':''}">
+        <div class="li-num">${i+1}</div>
+        <div class="li-body"><div class="li-text">${p.text}</div><div class="li-meta">${p.due} · ${p.cat}</div></div>
+        <div class="li-actions">
+          <div class="chk ${p.done?'done':''}" onclick="toggleP(${i})">✓</div>
+          <button class="x-btn" onclick="delP(${i})">✕</button>
+        </div>
+      </div>`).join('');
+  }
+  btn.style.display=spData.priorities.length>=3?'none':'inline-flex';
+}
+function addPriority(){
+  const text=document.getElementById('pText').value.trim();
+  if(!text){showToast('Enter an action first.');return;}
+  if(spData.priorities.length>=3){showToast('Max 3 priorities — stay focused!');return;}
+  const due=document.getElementById('pDue').value;
+  let ds='No deadline';
+  if(due)try{ds=new Date(due+'T12:00').toLocaleDateString('en-US',{month:'short',day:'numeric'});}catch(e){}
+  spData.priorities.push({text,due:ds,cat:document.getElementById('pCat').value,done:false});
+  saveSprint();renderPriorities();
+  document.getElementById('pText').value='';document.getElementById('pDue').value='';
+  closeModal('addPM');showToast('Priority added! Now go make it happen. ✦');
+}
+function toggleP(i){spData.priorities[i].done=!spData.priorities[i].done;saveSprint();renderPriorities();if(spData.priorities[i].done)showToast('✓ Complete!');}
+function delP(i){if(!confirm('Remove this priority?'))return;spData.priorities.splice(i,1);saveSprint();renderPriorities();}
+function saveCheckin(){
+  const v=['ci1','ci2','ci3','ci4','ci5'].map(id=>document.getElementById(id).value.trim());
+  if(!v[0]){showToast('Share your biggest win to save.');return;}
+  spData.checkins.unshift({win:v[0],stuck:v[1],needle:v[2],release:v[3],intention:v[4],date:new Date().toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})});
+  saveSprint();renderTimeline();
+  ['ci1','ci2','ci3','ci4','ci5'].forEach(id=>document.getElementById(id).value='');
+  showToast('✦ Check-in saved to your Growth Timeline!');
+}
+function renderTimeline(){
+  const tl=document.getElementById('timeline');
+  const cs=spData.checkins;
+  if(cs.length===0){tl.innerHTML='<div class="empty" id="tlEmpty"><div class="empty-icon">🌸</div><div class="empty-title">Timeline Awaits</div><div class="empty-desc">Save your first check-in to start your growth story.</div></div>';return;}
+  tl.innerHTML=cs.map((c,i)=>`
+    <div class="tl-entry">
+      <button class="x-btn" style="float:right;" onclick="delTL(${i})">✕</button>
+      <div class="tl-meta">Check-In #${cs.length-i} · ${c.date}</div>
+      <div class="tl-text">🏆 <strong>Win:</strong> ${c.win}${c.needle?'<br>⚡ <strong>Needle-mover:</strong> '+c.needle:''}${c.release?'<br>🌸 <strong>Releasing:</strong> '+c.release:''}${c.intention?'<br>🎯 <strong>Next week:</strong> '+c.intention:''}</div>
+    </div>`).join('');
+}
+function delTL(i){if(!confirm('Remove?'))return;spData.checkins.splice(i,1);saveSprint();renderTimeline();}
+
+// ════ WINS ════
+function postWin(){
+  const text=document.getElementById('winText').value.trim();
+  if(!text){showToast('Describe your win first!');return;}
+  const wins=load('wins',[]);
+  const p=load('profile',{});
+  wins.unshift({text,cat:document.getElementById('winCat').value,name:p.name||'Me',date:new Date().toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'})});
+  save('wins',wins);renderWins();document.getElementById('winText').value='';showToast('🌸 Win saved!');
+}
+function renderWins(){
+  const wins=load('wins',[]);
+  const feed=document.getElementById('winFeed');
+  document.getElementById('winCount').textContent=wins.length+' win'+(wins.length!==1?'s':'');
+  if(wins.length===0){feed.innerHTML='<div class="empty" id="winEmpty"><div class="empty-icon">★</div><div class="empty-title">Your First Win is Coming</div><div class="empty-desc">Post a win to start building your evidence of progress.</div></div>';document.getElementById('winStats').innerHTML='<div class="empty"><div class="empty-icon">📊</div><div class="empty-title">Stats Appear Here</div></div>';return;}
+  feed.innerHTML=wins.map((w,i)=>`<div class="win-item"><button class="x-btn" style="position:absolute;right:8px;top:8px;" onclick="delWin(${i})">✕</button><div class="win-av">${w.name.charAt(0).toUpperCase()}</div><div><div class="win-cat">${w.cat}</div><div class="win-text">${w.text}</div><div class="win-time">${w.date}</div></div></div>`).join('');
+  const cats={};wins.forEach(w=>{cats[w.cat]=(cats[w.cat]||0)+1;});
+  document.getElementById('winStats').innerHTML=Object.entries(cats).sort((a,b)=>b[1]-a[1]).map(([c,n])=>{
+    const pct=Math.round(n/wins.length*100);
+    return `<div style="margin-bottom:12px;"><div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px;"><span>${c}</span><span style="color:var(--rose);font-weight:500;">${n}</span></div><div style="height:5px;background:var(--border);border-radius:3px;overflow:hidden;"><div style="width:${pct}%;height:100%;background:linear-gradient(90deg,var(--blush),var(--rose));border-radius:3px;"></div></div></div>`;
+  }).join('');
+}
+function delWin(i){if(!confirm('Remove?'))return;const w=load('wins',[]);w.splice(i,1);save('wins',w);renderWins();}
+function newAff(){const el=document.getElementById('affirmation');if(el)el.textContent='"'+AFFS[Math.floor(Math.random()*AFFS.length)]+'"';}
+
+// ════ DECISION WIZARD ════
+let wStep=0,wA={},wCap={e:5,t:5,c:5};
+function wPick(el,step,val){el.closest('.opt-grid').querySelectorAll('.opt-btn').forEach(b=>b.classList.remove('picked'));el.classList.add('picked');wA[step]=val;setTimeout(wNext,280);}
+function wNext(){
+  document.getElementById('ws'+wStep).style.display='none';
+  document.getElementById('wd'+wStep).className='w-dot done';
+  wStep++;document.getElementById('wNum').textContent=Math.min(wStep+1,5);
+  if(wStep<5){document.getElementById('ws'+wStep).style.display='block';document.getElementById('wd'+wStep).className='w-dot active';}
+  if(wStep===4)buildResult();
+}
+function buildResult(){
+  const area=wA[0]||'your business';const urgency=wA[1]||'this month';const gut=wA[3]||'move forward';
+  const avg=(wCap.e+wCap.t+wCap.c)/3;const cap=avg>=7?'high':avg>=4?'medium':'low';
+  const recs={'Money & Pricing':`Your capacity is ${cap} right now. ${cap==='high'?'This is the right time to raise your rates — you have the energy and confidence to hold your price.':cap==='medium'?'Consider one targeted price increase on your highest-value offer before changing everything.':'Start small — even a 10% increase on one offer can shift your money mindset.'} Your gut says: ${gut}. Trust it. Price from value, not fear.`,'Marketing & Visibility':`With ${cap} capacity, ${cap==='high'?'launch a full visibility push — go all in on one platform for 30 days.':cap==='medium'?'commit to one channel and show up consistently, even imperfectly.':'even one piece of content per week done consistently beats a big push you can\'t sustain.'} Your gut says: ${gut}. Visibility compounds — start now.`,'Offers & Products':`Offer clarity is revenue clarity. ${cap==='high'?'You have the bandwidth to build or refine your signature offer right now.':cap==='medium'?'Simplify what you already have before creating anything new.':'Pause creating. Pick your one best offer and promote only that for 30 days.'} Your gut says: ${gut}.`,'Time & Team':`${cap==='high'?'You have the capacity to onboard a new team member or implement a new system now.':cap==='medium'?'Identify the one task draining you most and start there — delegate, automate, or eliminate.':'You are at capacity. Something has to go before something new can come in.'} Your gut says: ${gut}. Protecting your time is protecting your business.`};
+  document.getElementById('resultText').textContent=recs[area]||`Focus on ${area}. Urgency: ${urgency}. Gut: ${gut}. Make the decision and commit fully.`;
+  document.getElementById('resultTags').innerHTML=[area,urgency,`Capacity: ${cap}`].map(t=>`<span class="r-tag">${t}</span>`).join('');
+}
+function saveDecision(){
+  const ds=load('decisions',[]);
+  ds.unshift({area:wA[0]||'Business',urgency:wA[1]||'',gut:wA[3]||'',text:document.getElementById('resultText').textContent,date:new Date().toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})});
+  save('decisions',ds);renderDecisions();showToast('Decision saved ✦');
+}
+function renderDecisions(){
+  const arc=document.getElementById('decArchive');const ds=load('decisions',[]);
+  if(ds.length===0){arc.innerHTML='<div class="empty" id="arcEmpty"><div class="empty-icon">◈</div><div class="empty-title">No Decisions Yet</div><div class="empty-desc">Complete the wizard and save your first decision.</div></div>';return;}
+  arc.innerHTML=ds.map((d,i)=>`<div style="padding:13px 16px;background:var(--petal);border-radius:10px;border-left:3px solid var(--gold);margin-bottom:8px;position:relative;"><button class="x-btn" style="position:absolute;right:8px;top:8px;" onclick="delDec(${i})">✕</button><div style="font-size:13px;font-weight:500;color:var(--charcoal);">${d.area}</div><div style="font-size:11px;color:var(--muted);margin-top:2px;">${d.date} · ${d.urgency} · Gut: ${d.gut}</div><div style="font-size:12px;color:var(--charcoal);margin-top:7px;line-height:1.55;opacity:.85;">${d.text.substring(0,130)}...</div></div>`).join('');
+}
+function delDec(i){if(!confirm('Remove?'))return;const d=load('decisions',[]);d.splice(i,1);save('decisions',d);renderDecisions();}
+function wReset(){wStep=0;wA={};wCap={e:5,t:5,c:5};for(let i=0;i<5;i++){document.getElementById('ws'+i).style.display=i===0?'block':'none';document.getElementById('wd'+i).className=i===0?'w-dot active':'w-dot';}document.querySelectorAll('.opt-btn').forEach(b=>b.classList.remove('picked'));document.getElementById('wNum').textContent='1';document.querySelectorAll('input[type=range]').forEach(r=>r.value=5);['sv1','sv2','sv3'].forEach(id=>document.getElementById(id).textContent='5/10');}
+
+// ════ GOAL PLANNER ════
+function loadGoals(){
+  const m=parseInt(document.getElementById('goalMonth').value);
+  const p=GOAL_PROMPTS[m-1];
+  document.getElementById('goalPromptRevenue').textContent=p.rev;
+  document.getElementById('goalPromptMarketing').textContent=p.mkt;
+  document.getElementById('goalPromptOffer').textContent=p.offer;
+  document.getElementById('goalPromptMindset').textContent=p.mind;
+  const d=load('goals_'+m,{});
+  ['g-rev-target','g-rev-how','g-mkt-goal','g-mkt-platforms','g-offer-name','g-offer-price','g-offer-clients','g-identity','g-letgo','g-hours','g-stop','g-start'].forEach(id=>{
+    const el=document.getElementById(id);if(el)el.value=d[id]||'';
+  });
+  buildMonthlyChecklist(m);
+}
+function autoSaveGoals(){
+  const m=document.getElementById('goalMonth').value;
+  const d={};
+  ['g-rev-target','g-rev-how','g-mkt-goal','g-mkt-platforms','g-offer-name','g-offer-price','g-offer-clients','g-identity','g-letgo','g-hours','g-stop','g-start'].forEach(id=>{
+    const el=document.getElementById(id);if(el)d[id]=el.value;
+  });
+  save('goals_'+m,d);savedPulse();
+}
+const MONTHLY_TASKS=[
+  ["Update your monthly metrics","Complete this month's module content","Do your weekly check-in (x4)","Post content at least 3x per week","Have at least 1 sales or discovery conversation","Review and celebrate your wins","Set next month's 3 priorities"],
+  ["Update metrics","Refine your offer description","Post consistently","Have 2+ sales conversations","Grow your email list by at least 10 subscribers","Review your pricing — is it right?","Weekly check-ins x4"],
+  ["Update metrics","Get at least 1 more verbal yes on your offer","Post about the problem you solve","Reach out to 5 warm leads personally","Do weekly check-ins","Prepare for your first paying client"],
+  ["Update metrics","Choose and commit to your ONE platform","Post 3x/week minimum","Engage with potential clients' content daily","Grow your audience by a specific number","Weekly check-ins"],
+  ["Update metrics","Refine your 1-sentence description","Create content that speaks to your client's real problem","Share a transformation story","Practice saying your price out loud","Weekly check-ins"],
+  ["Update metrics","Have 3 discovery calls this month","State your price without apologising","Follow up on all open conversations","Update your pricing if needed","Weekly check-ins"],
+  ["Update metrics","Review your website or offer page","Ensure all links and payments work","Update your bio on all platforms","Get a testimonial from a happy client","Weekly check-ins"],
+  ["Update metrics","Create or update your lead magnet","Set up your email opt-in","Send at least 2 emails to your list","Grow your list by a specific number","Weekly check-ins"],
+  ["Update metrics","List the tasks taking most of your time","Research VA options if ready","Set up one new system or process","Speak to an accountant or lawyer if needed","Weekly check-ins"],
+  ["Update metrics","Pitch yourself to one podcast","Reach out to one collaboration partner","Attend one networking event","Ask for referrals from past clients","Weekly check-ins"],
+  ["Update metrics","Review your full offer suite","Remove or retire anything not working","Raise your prices if you haven't this year","Strengthen your profit margins","Weekly check-ins"],
+  ["Update metrics","Complete your Year 1 review","Set revenue goals for Year 2","Build your 12-month content plan","Align your goals with your personal vision","Celebrate your full year — you did it!"]
+];
+function buildMonthlyChecklist(m){
+  const saved=load('mcl_'+m,{});
+  const tasks=MONTHLY_TASKS[m-1];
+  document.getElementById('monthlyChecklist').innerHTML=tasks.map((t,i)=>`
+    <div class="cl-item">
+      <div class="cl-cb ${saved[i]?'done':''}" id="clcb_${i}" onclick="toggleCL(${i},${m})">✓</div>
+      <div class="cl-text ${saved[i]?'done':''}" id="cltext_${i}">${t}</div>
+    </div>`).join('');
+}
+function toggleCL(i,m){
+  const saved=load('mcl_'+m,{});saved[i]=!saved[i];save('mcl_'+m,saved);
+  document.getElementById('clcb_'+i).classList.toggle('done');
+  document.getElementById('cltext_'+i).classList.toggle('done');
+  savedPulse();
+}
+
+// ════ PRICING CALCULATOR ════
+function calcPrice(){
+  const income=parseFloat(document.getElementById('pc-income').value)||0;
+  const hours=parseFloat(document.getElementById('pc-hours').value)||0;
+  const clientHours=parseFloat(document.getElementById('pc-clienthours').value)||0;
+  const expenses=parseFloat(document.getElementById('pc-expenses').value)||0;
+  const type=document.getElementById('pc-type').value;
+  if(!income||!hours||!clientHours){document.getElementById('calcResult').innerHTML='';return;}
+  const maxClients=Math.floor(hours/clientHours);
+  const neededRevenue=income+expenses;
+  const minPerClient=maxClients>0?Math.ceil(neededRevenue/maxClients):0;
+  const recommended=Math.ceil(minPerClient*1.2/50)*50;
+  const typeLabels={1:'1:1 Coaching Package',group:'Group Program (per person)',vip:'VIP Day',retainer:'Monthly Retainer',course:'Online Course'};
+  document.getElementById('calcResult').innerHTML=`
+    <div class="calc-result">
+      <div style="font-size:11px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px;">Recommended Price</div>
+      <div class="calc-price">$${recommended.toLocaleString()}</div>
+      <div style="font-size:13px;color:var(--deep-rose);font-weight:500;margin-bottom:12px;">${typeLabels[type]||type}</div>
+      <div class="calc-breakdown">
+        <strong>Your numbers:</strong><br>
+        Monthly income goal: $${income.toLocaleString()}<br>
+        + Business expenses: $${expenses.toLocaleString()}<br>
+        = Total needed: $${neededRevenue.toLocaleString()}/month<br><br>
+        Max clients at ${clientHours}hrs/client: <strong>${maxClients}</strong><br>
+        Minimum price per client: <strong>$${minPerClient.toLocaleString()}</strong><br>
+        Recommended (with 20% buffer): <strong>$${recommended.toLocaleString()}</strong>
+      </div>
+      <div style="margin-top:12px;padding:10px;background:rgba(155,58,82,.08);border-radius:8px;font-size:12px;color:var(--deep-rose);line-height:1.5;">
+        💡 <strong>Remember:</strong> This is your floor, not your ceiling. If your transformation produces a $10k+ result for clients, your price can be much higher than this calculation suggests. Price for value, not just hours.
+      </div>
+    </div>`;
+}
+
+// ════ LAUNCH CHECKLIST ════
+function buildLaunchChecklist(){
+  Object.entries(LAUNCH_ITEMS).forEach(([phase,items])=>{
+    const saved=load('launch_'+phase,{});
+    const el=document.getElementById('launch'+phase.charAt(0).toUpperCase()+phase.slice(1));
+    if(!el)return;
+    el.innerHTML=items.map((item,i)=>`
+      <div class="cl-item">
+        <div class="cl-cb ${saved[i]?'done':''}" id="lc_${phase}_${i}" onclick="toggleLC('${phase}',${i})">✓</div>
+        <div class="cl-text ${saved[i]?'done':''}" id="lt_${phase}_${i}">${item}</div>
+      </div>`).join('');
+  });
+}
+function toggleLC(phase,i){
+  const saved=load('launch_'+phase,{});saved[i]=!saved[i];save('launch_'+phase,saved);
+  document.getElementById('lc_'+phase+'_'+i).classList.toggle('done');
+  document.getElementById('lt_'+phase+'_'+i).classList.toggle('done');
+  savedPulse();
+}
+function saveLaunch(){showToast('Launch progress saved ✦');}
+function resetLaunch(){
+  if(!confirm('Reset all launch checklist progress for a new launch?'))return;
+  ['phase1','phase2','phase3','phase4','phase5','phase6'].forEach(p=>save('launch_'+p,{}));
+  buildLaunchChecklist();showToast('Launch checklist reset — good luck with your new launch!');
+}
+
+// ════ CONTENT PROMPTS ════
+function buildContentTabs(){
+  const tabs=document.getElementById('contentTabs');
+  tabs.innerHTML=MODULES.map((m,i)=>`<button class="tab-btn ${i===0?'active':''}" onclick="loadContentTab(${m.n},this)">M${m.n}</button>`).join('');
+  loadContentPromptsForModule(1);
+}
+function loadContentTab(n,btn){
+  document.querySelectorAll('#contentTabs .tab-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');loadContentPromptsForModule(n);
+}
+function loadContentPromptsForModule(n){
+  const prompts=CONTENT_PROMPTS[n]||[];
+  document.getElementById('contentPrompts').innerHTML=`
+    <div style="background:var(--petal);border-radius:9px;padding:12px;margin-bottom:14px;border-left:3px solid var(--rose);">
+      <div style="font-size:11px;color:var(--deep-rose);font-weight:600;margin-bottom:3px;">Module ${n}: ${MODULES[n-1].title}</div>
+      <div style="font-size:12px;color:var(--charcoal);line-height:1.5;">${MODULES[n-1].outcomes}</div>
+    </div>`+
+    prompts.map((p,i)=>`
+      <div style="display:flex;align-items:flex-start;gap:10px;padding:12px 14px;background:var(--petal);border-radius:10px;border:1px solid var(--border);margin-bottom:8px;">
+        <div style="font-family:Cinzel,serif;font-size:13px;color:var(--gold);min-width:20px;font-weight:600;">${i+1}</div>
+        <div style="flex:1;font-size:13px;color:var(--charcoal);line-height:1.55;">${p}</div>
+        <button class="copy-btn" onclick="copyPrompt(\`${p.replace(/`/g,"'")}\`,this)">Copy</button>
+      </div>`).join('');
+}
+function copyPrompt(text,btn){navigator.clipboard.writeText(text).then(()=>{btn.textContent='Copied!';setTimeout(()=>btn.textContent='Copy',2000);}).catch(()=>showToast('Copied!'));}
+
+// ════ AUDIENCE TRACKER ════
+function saveAudTracker(){
+  const m=document.getElementById('metricMonth').value;
+  save('aud_'+m,{ig:document.getElementById('aud-ig').value,fb:document.getElementById('aud-fb').value,email:document.getElementById('aud-email-count').value,li:document.getElementById('aud-li').value});
+  buildAudTracker();savedPulse();
+}
+function buildAudTracker(){
+  let html=`<thead><tr style="border-bottom:1px solid var(--border);">
+    <th style="text-align:left;padding:6px 10px;color:var(--muted);font-size:11px;font-weight:500;">Month</th>
+    <th style="text-align:right;padding:6px 10px;color:var(--muted);font-size:11px;font-weight:500;">Instagram</th>
+    <th style="text-align:right;padding:6px 10px;color:var(--muted);font-size:11px;font-weight:500;">Facebook</th>
+    <th style="text-align:right;padding:6px 10px;color:var(--muted);font-size:11px;font-weight:500;">Email</th>
+    <th style="text-align:right;padding:6px 10px;color:var(--muted);font-size:11px;font-weight:500;">LinkedIn</th>
+  </tr></thead><tbody>`;
+  for(let i=1;i<=12;i++){
+    const d=load('aud_'+i,{});
+    const has=d.ig||d.fb||d.email||d.li;
+    html+=`<tr style="border-bottom:1px solid var(--border);${!has?'opacity:.4':''}"><td style="padding:6px 10px;font-size:12px;font-weight:500;">Month ${i}</td><td style="text-align:right;padding:6px 10px;font-size:12px;">${d.ig||'—'}</td><td style="text-align:right;padding:6px 10px;font-size:12px;">${d.fb||'—'}</td><td style="text-align:right;padding:6px 10px;font-size:12px;">${d.email||'—'}</td><td style="text-align:right;padding:6px 10px;font-size:12px;">${d.li||'—'}</td></tr>`;
+  }
+  html+='</tbody>';
+  const t=document.getElementById('audTable');if(t)t.innerHTML=html;
+}
+function audTab(btn,id){document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');}
+
+// ════ TEMPLATES ════
+function buildTemplates(){
+  // Sales Page
+  const spSections=[
+    {title:'HEADLINE',body:'[Transformation Result] for [Ideal Client]\n\ne.g. "Finally Earn What You\'re Worth: The 1:1 Coaching Package for Women Ready to Build a Profitable Business on Their Own Terms"'},
+    {title:'THE PROBLEM (They feel this deeply)',body:'If you\'re [describe their current frustration]...\nAnd you\'re tired of [the struggle]...\nYou already know you\'re capable of more.\nYou just need [what you provide].'},
+    {title:'INTRODUCE YOURSELF',body:'Hi, I\'m [Your Name].\nI help [who] to [what outcome] without [the thing they hate].\n\n[2-3 sentences about your story/why you do this work. Be real — not a resume. Connect on a human level.]'},
+    {title:'WHAT\'S INCLUDED',body:'Here\'s what you get when you work with me:\n\n✦ [Feature 1] — so that [benefit/outcome]\n✦ [Feature 2] — so that [benefit/outcome]\n✦ [Feature 3] — so that [benefit/outcome]\n✦ [Feature 4] — so that [benefit/outcome]\n✦ [Support/Access details]'},
+    {title:'THE INVESTMENT',body:'[Program Name]\n\n$[Price] [payment terms]\n\nOr [payment plan option if offered]\n\n[What happens next — "Click the button below to book your call / purchase / apply"]'},
+    {title:'THIS IS FOR YOU IF...',body:'✓ You are [ideal client description]\n✓ You are ready to [commitment/action]\n✓ You want [specific outcome]\n✓ You are tired of [current pain]'},
+    {title:'THIS IS NOT FOR YOU IF...',body:'✗ You are looking for a quick fix\n✗ You are not willing to do the work\n✗ You want guarantees without commitment\n\n(Being clear about who this isn\'t for builds trust with the people it IS for.)'},
+    {title:'YOUR CALL TO ACTION',body:'[Button or link text]: Book My Free Discovery Call\n\nOr: Yes — I\'m Ready to [outcome]\n\nKeep it simple. One action. No confusion.'},
+  ];
+  document.getElementById('salesPageSections').innerHTML=spSections.map((s,i)=>`
+    <div class="tmpl-card">
+      <div class="tmpl-title">SECTION ${i+1}: ${s.title}</div>
+      <textarea class="tmpl-edit" id="sp_${i}" oninput="saveTmpl('sp_${i}',this.value)">${load('sp_'+i,s.body)}</textarea>
+
+```
+  <div class="tmpl-actions"><button class="copy-btn" onclick="copyEl('sp_${i}',this)">Copy Section</button><button class="copy-btn" onclick="resetTmpl('sp_${i}',\`${s.body.replace(/`/g,"'")}\`)">Reset</button></div>
+</div>`).join('');
+```
+
+// Sales Emails
+const emails=[
+{title:‘EMAIL 1 — The Announcement (Day 1)’,body:‘Subject: I want to tell you something\n\nHey [First Name],\n\nI've been building something I'm really proud of, and I want you to know about it.\n\n[Describe your offer in 2-3 sentences. What it is, who it's for, what they'll be able to do at the end.]\n\nThis is for you if [brief description of ideal client].\n\nI'm opening [X spots / taking applications / accepting enrolments] and I don't want you to miss out.\n\n[CTA Button/Link]: [Tell me more / Apply now / Book a call]\n\nWith love,\n[Your Name]\n\nP.S. [A short, personal PS that reinforces the urgency or value — this often gets more reads than the email itself.]’},
+{title:‘EMAIL 2 — The Value Email (Day 3)’,body:‘Subject: The real reason [common struggle they face]\n\nHey [First Name],\n\n[Start with a story or insight related to the problem your offer solves. 2-3 paragraphs. Make it real, make it relatable.]\n\nThis is exactly why I created [Offer Name].\n\n[1-2 sentences describing how your offer solves this.]\n\n[CTA]: [Join us / Book your spot / Apply here]\n\n[Your Name]’},
+{title:‘EMAIL 3 — The Last Call (Day 5)’,body:‘Subject: Last chance — [closing reason]\n\nHey [First Name],\n\nThis is your reminder that [offer name] closes [tonight / this Friday / when spots fill].\n\nIf you've been thinking about it — this is your sign.\n\nHere's what you'll walk away with:\n→ [Outcome 1]\n→ [Outcome 2]\n→ [Outcome 3]\n\nThe investment: $[price]\n\n[CTA Link]: Secure my spot\n\nIf this isn't the right time, no worries at all — just reply and let me know. I'm always here.\n\n[Your Name]\n\nP.S. [After this closes, the next opportunity is X. Don't miss it.]’},
+];
+document.getElementById(‘salesEmailTemplates’).innerHTML=emails.map((e,i)=>` <div class="tmpl-card"> <div class="tmpl-title">${e.title}</div> <textarea class="tmpl-edit" id="em_${i}" oninput="saveTmpl('em_${i}',this.value)" style="min-height:160px;">${load('em_'+i,e.body)}</textarea> <div class="tmpl-actions"><button class="copy-btn" onclick="copyEl('em_${i}',this)">Copy Email</button><button class="copy-btn" onclick="resetTmpl('em_${i}',\`${e.body.replace(/`/g,"'")}\`)”>Reset</button></div>
+</div>`).join(’’);
+
+// Discovery Call Script
+const callSteps=[
+{title:‘OPEN (2 min)’,body:‘Thank them for their time. Set the tone.\n\n”Thank you so much for being here. What I'd love to do today is spend some time getting to know you and what you're working on, then I'll share a bit about how I work, and at the end we'll both know if this is a good fit. Does that work for you?”’},
+{title:‘UNDERSTAND THEIR SITUATION (10 min)’,body:‘Ask open questions. Listen more than you talk.\n\n”Tell me what's going on in your business right now.”\n”What prompted you to reach out at this point?”\n”What does your day-to-day look like at the moment?”\n”What have you already tried to solve this?”’},
+{title:‘DIG INTO THE PAIN (5 min)’,body:’“What's the biggest challenge that's getting in the way right now?”\n”How long has this been an issue?”\n”What does it cost you — in time, money, or energy — to not have this solved?”\n”What happens if nothing changes in the next 6 months?”’},
+{title:‘UNCOVER THE DESIRE (5 min)’,body:’“What would success look like for you, ideally?”\n”If we worked together and it went incredibly well — what would be different?”\n”What would that mean for your life, your business, your family?”\n\n[Let them paint the picture. This is gold — it's what you reflect back when you present your offer.]’},
+{title:‘PRESENT YOUR OFFER (5 min)’,body:’“Based on everything you've shared, I think [Offer Name] could be a really good fit for you. Here's why…”\n\n[Connect their specific pain to your specific solution. Use their words.]\n\n”What this looks like is [brief description of process and what's included].”\n\n”The investment for this is $[price].” [Then pause. Stay quiet. Let them respond.]’},
+{title:‘HANDLE QUESTIONS & CLOSE (10 min)’,body:‘Common responses and how to handle them:\n\n”I need to think about it.”\n→ “Of course. What would help you feel more confident about the decision?”\n\n”It's expensive.”\n→ “I understand. What would it be worth to you to [their desired outcome]?”\n\n”I need to check with my partner.”\n→ “Absolutely. What do you think their main concerns would be? Let's talk through them.”\n\nClosing: “So — does this feel like the right fit for you?” [Wait for their answer.]’},
+{title:‘NEXT STEPS’,body:‘If yes: “Wonderful. I'll send you the agreement and invoice within the hour. Once that's signed and payment is in, we'll book your first session. Excited to work with you!”\n\nIf not yet: “No problem at all. I'll follow up with you by [specific date]. Is there anything else I can share in the meantime?”’},
+];
+document.getElementById(‘callScript’).innerHTML=callSteps.map((s,i)=>` <div class="tmpl-card"> <div class="tmpl-title">STEP ${i+1}: ${s.title}</div> <textarea class="tmpl-edit" id="cs_${i}" oninput="saveTmpl('cs_${i}',this.value)">${load('cs_'+i,s.body)}</textarea> <div class="tmpl-actions"><button class="copy-btn" onclick="copyEl('cs_${i}',this)">Copy</button><button class="copy-btn" onclick="resetTmpl('cs_${i}',\`${s.body.replace(/`/g,"'")}\`)”>Reset</button></div>
+</div>`).join(’’);
+
+// Simple Funnel
+const funnelSteps=[
+{step:“AWARENESS”,desc:“They find you”,actions:“Social media content · Podcast appearances · Referrals · Word of mouth · Networking events”,goal:“They know you exist and understand what you do.”},
+{step:“INTEREST”,desc:“They want to know more”,actions:“Follow you on social · Join your email list · Download your lead magnet · Engage with your content”,goal:“They’re on your list or following you closely.”},
+{step:“CONSIDERATION”,desc:“They’re thinking about working with you”,actions:“Read your emails · Watch your content · Check out your website · Book a discovery call”,goal:“They’ve seen enough to believe you can help them.”},
+{step:“DECISION”,desc:“They say yes”,actions:“Discovery call · Direct DM conversation · Sales page purchase · Application accepted”,goal:“They commit and pay.”},
+{step:“DELIGHT”,desc:“You deliver and they rave about you”,actions:“Excellent onboarding · Over-deliver on your promise · Ask for a testimonial · Ask for a referral”,goal:“They become your best marketing.”},
+];
+document.getElementById(‘funnelMap’).innerHTML=`<div style="display:flex;flex-direction:column;gap:10px;"> ${funnelSteps.map((f,i)=>`
+<div style="display:flex;gap:14px;align-items:flex-start;padding:16px;background:var(--petal);border-radius:11px;border:1px solid var(--border);">
+<div style="flex-shrink:0;text-align:center;">
+<div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--blush),var(--rose));display:flex;align-items:center;justify-content:center;color:#fff;font-family:Cinzel,serif;font-size:14px;font-weight:600;">${i+1}</div>
+</div>
+<div style="flex:1;">
+<div style="font-family:Cinzel,serif;font-size:11px;color:var(--deep-rose);letter-spacing:.08em;margin-bottom:3px;">${f.step}</div>
+<div style="font-size:13px;font-weight:500;color:var(--charcoal);margin-bottom:5px;">${f.desc}</div>
+<div style="font-size:12px;color:var(--muted);line-height:1.55;margin-bottom:5px;">${f.actions}</div>
+<div style="font-size:11.5px;color:var(--deep-rose);font-style:italic;">Goal: ${f.goal}</div>
+</div>
+</div>`).join('')} </div> <div style="margin-top:14px;padding:14px;background:linear-gradient(135deg,var(--petal),#f5dde8);border-radius:11px;border:1px solid var(--blush);"> <div style="font-family:Cinzel,serif;font-size:11px;color:var(--deep-rose);margin-bottom:6px;">THE INNER CIRCLE PRINCIPLE</div> <div style="font-size:13px;color:var(--charcoal);line-height:1.65;">You don't need a complicated funnel at your stage. You need: consistent visibility (awareness), a simple way to capture leads (interest), a genuine sales conversation (decision), and remarkable delivery (delight). That's it. Build this first. Complicate it later — only if needed.</div> </div>`;
+}
+function saveTmpl(id,val){save(‘tmpl_’+id,val);}
+function copyEl(id,btn){const v=document.getElementById(id).value;navigator.clipboard.writeText(v).then(()=>{btn.textContent=‘Copied!’;setTimeout(()=>btn.textContent=‘Copy’,2000);}).catch(()=>showToast(‘Text copied!’));}
+function resetTmpl(id,original){if(!confirm(‘Reset to original template? Your edits will be lost.’))return;document.getElementById(id).value=original;save(‘tmpl_’+id,original);}
+function tmplTab(btn,id){document.querySelectorAll(’.tabs .tab-btn’).forEach(b=>b.classList.remove(‘active’));btn.classList.add(‘active’);document.querySelectorAll(’.tab-panel’).forEach(p=>p.classList.remove(‘active’));document.getElementById(id).classList.add(‘active’);}
+
+// ════ VA TOOLS ════
+const DELEGATE_TASKS=[“Email inbox management and responses”,“Scheduling and calendar management”,“Social media scheduling and posting”,“Formatting and publishing blog posts”,“Client onboarding admin and paperwork”,“Creating graphics in Canva”,“Research tasks (products, competitors, contacts)”,“Data entry and spreadsheet management”,“Invoicing and payment tracking”,“Responding to comments and DMs”,“File and document organisation”,“Creating reports or summaries from data”];
+const VA_PRE=[“Know exactly which tasks you want to delegate”,“Document the process for each task before hiring”,“Have consistent revenue to cover VA costs”,“Set a clear weekly hours budget”,“Prepare a clear job description (use the Job Ad Builder)”,“Decide on your communication tools and expectations”,“Choose your payment method (PayPal, Wise, bank transfer)”,“Speak to your accountant about contractor vs employee rules in your country”];
+const VA_POST=[“Send a detailed welcome document with processes”,“Set up access to required tools and platforms”,“Start with a paid test project before full commitment”,“Schedule a weekly check-in call for the first month”,“Provide clear feedback in the first two weeks”,“Set boundaries and expectations early”,“Track hours and tasks for the first 30 days”,“Review fit at the 30-day mark”];
+
+function buildVAtools(){
+const dSaved=load(‘va-delegate’,{});
+document.getElementById(‘delegateList’).innerHTML=DELEGATE_TASKS.map((t,i)=>` <div class="cl-item"> <div class="cl-cb ${dSaved[i]?'done':''}" id="vd_${i}" onclick="toggleVAD(${i})">✓</div> <div class="cl-text ${dSaved[i]?'done':''}" id="vdt_${i}">${t}</div> </div>`).join(’’);
+const preSaved=load(‘va-pre’,{});
+document.getElementById(‘vaPreChecklist’).innerHTML=VA_PRE.map((t,i)=>` <div class="cl-item"> <div class="cl-cb ${preSaved[i]?'done':''}" id="vp_${i}" onclick="toggleVAP(${i})">✓</div> <div class="cl-text ${preSaved[i]?'done':''}" id="vpt_${i}">${t}</div> </div>`).join(’’);
+const postSaved=load(‘va-post’,{});
+document.getElementById(‘vaPostChecklist’).innerHTML=VA_POST.map((t,i)=>` <div class="cl-item"> <div class="cl-cb ${postSaved[i]?'done':''}" id="vo_${i}" onclick="toggleVAO(${i})">✓</div> <div class="cl-text ${postSaved[i]?'done':''}" id="vot_${i}">${t}</div> </div>`).join(’’);
+}
+function toggleVAD(i){const s=load(‘va-delegate’,{});s[i]=!s[i];save(‘va-delegate’,s);document.getElementById(‘vd_’+i).classList.toggle(‘done’);document.getElementById(‘vdt_’+i).classList.toggle(‘done’);savedPulse();}
+function toggleVAP(i){const s=load(‘va-pre’,{});s[i]=!s[i];save(‘va-pre’,s);document.getElementById(‘vp_’+i).classList.toggle(‘done’);document.getElementById(‘vpt_’+i).classList.toggle(‘done’);savedPulse();}
+function toggleVAO(i){const s=load(‘va-post’,{});s[i]=!s[i];save(‘va-post’,s);document.getElementById(‘vo_’+i).classList.toggle(‘done’);document.getElementById(‘vot_’+i).classList.toggle(‘done’);savedPulse();}
+function vaTab(btn,id){document.querySelectorAll(’.tab-btn’).forEach(b=>b.classList.remove(‘active’));btn.classList.add(‘active’);document.querySelectorAll(’.tab-panel’).forEach(p=>p.classList.remove(‘active’));document.getElementById(id).classList.add(‘active’);}
+function generateVAad(){
+const biz=document.getElementById(‘va-biz’).value.trim();
+const hrs=document.getElementById(‘va-hrs’).value.trim();
+const rate=document.getElementById(‘va-rate’).value.trim();
+const tasks=document.getElementById(‘va-tasks’).value.trim();
+const skills=document.getElementById(‘va-skills’).value.trim();
+const tz=document.getElementById(‘va-tz’).value.trim();
+if(!biz||!tasks){showToast(‘Please fill in your business type and tasks first.’);return;}
+const ad=`VIRTUAL ASSISTANT WANTED — ${biz.toUpperCase()}
+
+ABOUT US
+We are a ${biz}. We are growing quickly and looking for a detail-oriented, reliable Virtual Assistant to join our small team and help us run smoothly behind the scenes.
+
+THE ROLE
+This is a part-time, remote position. You will be working directly with the business owner.${hrs?’\nHours: ‘+hrs:’’}${rate?’\nRate: ‘+rate:’’}${tz?’\nTimezone: ‘+tz:’’}
+
+YOUR RESPONSIBILITIES
+${tasks}
+
+WHAT WE’RE LOOKING FOR
+${skills||’- Reliable, detail-oriented, and proactive\n- Strong written communication skills\n- Comfortable working independently\n- Quick to learn new tools and systems’}
+
+HOW TO APPLY
+Please send an email with the subject line “VA Application — [Your Name]” including:
+
+1. A brief introduction about your background
+1. Your experience with the tasks listed above
+1. 2-3 examples of similar work you’ve done
+1. Your availability and preferred hours
+1. Your hourly rate
+
+We look forward to hearing from you!`; const output=document.getElementById('vaAdOutput'); output.innerHTML=`<div class="ja-output" id="vaAdText">${ad}</div><div style="margin-top:10px;"><button class="copy-btn" onclick="copyVAad(this)">Copy Job Ad</button></div>`;
+}
+function copyVAad(btn){const text=document.getElementById(‘vaAdText’).textContent;navigator.clipboard.writeText(text).then(()=>{btn.textContent=‘Copied!’;setTimeout(()=>btn.textContent=‘Copy Job Ad’,2000);}).catch(()=>showToast(‘Ad copied!’));}
+
+// ════ BOOT ════
+window.addEventListener(‘DOMContentLoaded’,init);
+</script>
+
+</body>
+</html>
