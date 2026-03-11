@@ -326,7 +326,7 @@ transition:color .2s;
         <option value="12">Month 12 — Build Your Next-Year Plan</option>
       </select>
     </div>
-    <button class="btn btn-rose btn-block" style="font-size:14px;padding:13px;" onclick="completeSetup()">Open My App ✦</button>
+    <button id="setupBtn" class="btn btn-rose btn-block" style="font-size:14px;padding:13px;cursor:pointer;-webkit-appearance:none;touch-action:manipulation;">Open My App ✦</button>
   </div>
 </div>
 
@@ -1106,13 +1106,21 @@ function init(){
   }
 }
 function completeSetup(){
-  const name=document.getElementById('setupName').value.trim();
-  const month=parseInt(document.getElementById('setupMonth').value);
-  if(!name){showToast('Please enter your name!');return;}
-  save('profile',{name,startMonth:month,created:new Date().toISOString()});
+  var nameEl=document.getElementById('setupName');
+  var monthEl=document.getElementById('setupMonth');
+  if(!nameEl||!monthEl)return;
+  var name=nameEl.value.trim();
+  var month=parseInt(monthEl.value)||1;
+  if(!name){
+    alert('Please enter your first name to continue.');
+    nameEl.focus();
+    return;
+  }
+  var profile={name:name,startMonth:month,created:new Date().toISOString()};
+  try{localStorage.setItem('eic2_profile',JSON.stringify(profile));}catch(e){}
   document.getElementById('setupScreen').style.display='none';
   document.getElementById('appShell').style.display='flex';
-  boot({name,startMonth:month});
+  boot(profile);
 }
 function boot(p){
   const m=p.startMonth||1;
@@ -1635,7 +1643,26 @@ We look forward to hearing from you!`; const output=document.getElementById('vaA
 function copyVAad(btn){const text=document.getElementById(‘vaAdText’).textContent;navigator.clipboard.writeText(text).then(()=>{btn.textContent=‘Copied!’;setTimeout(()=>btn.textContent=‘Copy Job Ad’,2000);}).catch(()=>showToast(‘Ad copied!’));}
 
 // ════ BOOT ════
-window.addEventListener(‘DOMContentLoaded’,init);
+// Robust cross-browser init — works on iPhone Safari
+function bindSetupBtn(){
+var btn=document.getElementById(‘setupBtn’);
+if(!btn)return;
+// Use both touchend and click for maximum Safari compatibility
+btn.addEventListener(‘click’,function(e){
+e.preventDefault();
+completeSetup();
+});
+btn.addEventListener(‘touchend’,function(e){
+e.preventDefault();
+completeSetup();
+});
+}
+if(document.readyState===‘loading’){
+document.addEventListener(‘DOMContentLoaded’,function(){init();bindSetupBtn();});
+} else {
+init();
+bindSetupBtn();
+}
 </script>
 
 </body>
